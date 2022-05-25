@@ -6,15 +6,15 @@ import banner3 from '../../assets/images/slide-3-bg.jpg';
 const Banner = () => {
   return (
     <section className="h-[60vh] sm:h-[85vh]">
-      <div class="carousel w-full z-0">
-        <div id="slide1" class="carousel-item relative w-full">
+      <div className="carousel w-full z-0">
+        <div id="slide1" className="carousel-item relative w-full">
           <img
             alt=""
             src={banner1}
-            class="w-full object-cover object-center h-[60vh] sm:h-auto"
+            className="w-full object-cover object-center h-[60vh] sm:h-auto"
           />
-          <div class="absolute flex justify-between transform -translate-y-1/4 left-5 right-5 top-1/2">
-            <a href="#slide3" class="btn btn-circle">
+          <div className="absolute flex justify-between transform -translate-y-1/4 left-5 right-5 top-1/2">
+            <a href="#slide3" className="btn btn-circle">
               ❮
             </a>
             <div className="w-3/6 mr-auto md:-mt-10">
@@ -32,19 +32,19 @@ const Banner = () => {
                 Discover More
               </button>
             </div>
-            <a href="#slide2" class="btn btn-circle">
+            <a href="#slide2" className="btn btn-circle">
               ❯
             </a>
           </div>
         </div>
-        <div id="slide2" class="carousel-item relative w-full">
+        <div id="slide2" className="carousel-item relative w-full">
           <img
             alt=""
             src={banner2}
-            class="w-full object-cover object-center h-[70vh] sm:h-auto"
+            className="w-full object-cover object-center h-[70vh] sm:h-auto"
           />
-          <div class="absolute flex justify-between transform -translate-y-1/4 left-5 right-5 top-1/2">
-            <a href="#slide1" class="btn btn-circle">
+          <div className="absolute flex justify-between transform -translate-y-1/4 left-5 right-5 top-1/2">
+            <a href="#slide1" className="btn btn-circle">
               ❮
             </a>
             <div className="w-3/6 mr-auto md:-mt-10">
@@ -63,19 +63,19 @@ const Banner = () => {
                 Discover More
               </button>
             </div>
-            <a href="#slide3" class="btn btn-circle">
+            <a href="#slide3" className="btn btn-circle">
               ❯
             </a>
           </div>
         </div>
-        <div id="slide3" class="carousel-item relative w-full">
+        <div id="slide3" className="carousel-item relative w-full">
           <img
             alt=""
             src={banner3}
-            class="w-full object-cover object-center h-[70vh] sm:h-auto"
+            className="w-full object-cover object-center h-[70vh] sm:h-auto"
           />
-          <div class="absolute flex justify-between transform -translate-y-1/4 left-5 right-5 top-1/2">
-            <a href="#slide2" class="btn btn-circle">
+          <div className="absolute flex justify-between transform -translate-y-1/4 left-5 right-5 top-1/2">
+            <a href="#slide2" className="btn btn-circle">
               ❮
             </a>
             <div className="w-3/6 mr-auto md:-mt-10">
@@ -95,7 +95,7 @@ const Banner = () => {
                 Discover More
               </button>
             </div>
-            <a href="#slide1" class="btn btn-circle">
+            <a href="#slide1" className="btn btn-circle">
               ❯
             </a>
           </div>

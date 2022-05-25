@@ -7,14 +7,14 @@ const SubscribeNow = () => {
         <h3 className="text-2xl text-orange-600 md:mr-8 hidden xl:block">
           Subscribe for News and Get a Discount
         </h3>
-        <div class="form-control">
-          <div class="w-auto">
+        <div className="form-control">
+          <div className="w-auto">
             <input
               type="text"
               placeholder="Your Email"
-              class="px-4 sm:px-20 py-3 outline-none focus:ring-0 mr-1 sm:mr-5 rounded-full bg-gray-100"
+              className="px-4 sm:px-20 py-3 outline-none focus:ring-0 mr-1 sm:mr-5 rounded-full bg-gray-100"
             />
-            <button class="btn rounded-full">Subscribe Now</button>
+            <button className="btn rounded-full">Subscribe Now</button>
           </div>
         </div>
       </div>

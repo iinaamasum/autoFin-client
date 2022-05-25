@@ -11,27 +11,34 @@ const Navbar = ({ children }) => {
   ];
   return (
     <section className="">
-      <div class="drawer drawer-end">
-        <input id="drawer-open-close" type="checkbox" class="drawer-toggle" />
-        <div class="drawer-content flex flex-col relative">
-          <div class="w-full bg-base-300 fixed top-0 left-0 right-0 z-50">
+      <div className="drawer drawer-end">
+        <input
+          id="drawer-open-close"
+          type="checkbox"
+          className="drawer-toggle"
+        />
+        <div className="drawer-content flex flex-col relative">
+          <div className="w-full bg-base-300 fixed top-0 left-0 right-0 z-50">
             <div
               style={{ maxWidth: '1200px' }}
               className="navbar container mx-auto"
             >
-              <div class="flex-1 px-2 mx-2 text-4xl font-bold">
+              <div className="flex-1 px-2 mx-2 text-4xl font-bold">
                 {' '}
                 <span className="text-red-500">auto</span>
                 <span className="text-blue-700">Fin</span>
               </div>
-              <div class="flex-none lg:hidden">
-                <label for="drawer-open-close" class="btn btn-square btn-ghost">
+              <div className="flex-none lg:hidden">
+                <label
+                  htmlFor="drawer-open-close"
+                  className="btn btn-square btn-ghost"
+                >
                   <MdOutlineMenuOpen size={35} />
                 </label>
               </div>
 
-              <div class="flex-none hidden lg:block">
-                <ul class="menu menu-horizontal gap-4 text-md font-semibold">
+              <div className="flex-none hidden lg:block">
+                <ul className="menu menu-horizontal gap-4 text-md font-semibold">
                   {navLinks.map((link) => (
                     <li key={link.id}>
                       <NavLink to={link.path} className="rounded-lg">
@@ -46,11 +53,11 @@ const Navbar = ({ children }) => {
           {/* <!-- Page content here --> */}
           {children}
         </div>
-        <div class="drawer-side">
-          <label for="drawer-open-close" class="drawer-overlay"></label>
-          <ul class="menu p-4 overflow-y-auto w-80 bg-base-100">
+        <div className="drawer-side">
+          <label htmlFor="drawer-open-close" className="drawer-overlay"></label>
+          <ul className="menu p-4 overflow-y-auto w-80 bg-base-100">
             {navLinks.map((link) => (
-              <li for="drawer-open-close" key={link.id}>
+              <li htmlFor="drawer-open-close" key={link.id}>
                 <NavLink to={link.path} className="rounded-lg">
                   {link.name}
                 </NavLink>
