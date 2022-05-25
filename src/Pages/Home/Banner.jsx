@@ -6,7 +6,7 @@ import banner3 from '../../assets/images/slide-3-bg.jpg';
 const Banner = () => {
   return (
     <section>
-      <div class="carousel h-[80vh] w-full">
+      <div class="carousel h-[80vh] w-full z-0">
         <div id="slide1" class="carousel-item relative w-full">
           <img alt="" src={banner1} class="w-full" />
           <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
