@@ -3,7 +3,7 @@ import React from 'react';
 const SubscribeNow = () => {
   return (
     <div className="z-40 w-full md:w-3/4 mx-auto">
-      <div className="bg-white relative md:-mt-14 flex items-center justify-center py-10 rounded-2xl">
+      <div className="bg-white relative lg:mt-14 flex items-center justify-center py-10 rounded-2xl">
         <h3 className="text-2xl text-orange-600 md:mr-8 hidden xl:block">
           Subscribe for News and Get a Discount
         </h3>

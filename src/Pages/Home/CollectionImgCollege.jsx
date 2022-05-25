@@ -25,7 +25,7 @@ const CollectionImgCollege = () => {
     { id: 10, bg_img: cat10, text: 'Other' },
   ];
   return (
-    <div className="my-14">
+    <div className="mt-14">
       <div className="text-center font-sans">
         <h1 className="text-7xl font-bold">
           WELCOME TO <span className="text-red-600">AUTOFIN</span>
@@ -35,7 +35,7 @@ const CollectionImgCollege = () => {
         </h4>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 my-10">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 mt-10">
         {collegeData.map((item) => (
           <CollectionCollegeCard key={item.id} item={item} />
         ))}
