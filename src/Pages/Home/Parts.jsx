@@ -23,7 +23,7 @@ const Parts = () => {
     <>
       <section
         style={{ maxWidth: '1300px' }}
-        className="container mx-auto px-4 md:px-8"
+        className="container mx-auto px-4 md:px-8 my-10"
       >
         <div className="text-center my-10">
           <h4 className="text-xl md:tex-3xl text-gray-400 font-medium">
