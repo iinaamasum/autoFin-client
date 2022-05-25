@@ -2,7 +2,7 @@ import React from 'react';
 import { MdOutlineMenuOpen } from 'react-icons/md';
 import { NavLink } from 'react-router-dom';
 
-const Navbar = () => {
+const Navbar = ({ children }) => {
   const navLinks = [
     { id: 1, path: '/', name: 'Home' },
     { id: 2, path: '/products', name: 'Products' },
@@ -44,7 +44,7 @@ const Navbar = () => {
             </div>
           </div>
           {/* <!-- Page content here --> */}
-          Content
+          {children}
         </div>
         <div class="drawer-side">
           <label for="drawer-open-close" class="drawer-overlay"></label>
