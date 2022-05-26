@@ -1,25 +1,20 @@
 import React, { useEffect } from 'react';
 import {
-  useAuthState,
   useSignInWithFacebook,
   useSignInWithGithub,
   useSignInWithGoogle,
 } from 'react-firebase-hooks/auth';
 import { toast } from 'react-hot-toast';
 import { BsFacebook, BsGithub, BsGoogle } from 'react-icons/bs';
-import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 
 const Social = () => {
-  const navigate = useNavigate();
   const [signInWithGoogle, userGo, loadingGo, errorGo] =
     useSignInWithGoogle(auth);
   const [signInWithFacebook, userFb, loadingFb, errorFb] =
     useSignInWithFacebook(auth);
   const [signInWithGithub, userGit, loadingGit, errorGit] =
     useSignInWithGithub(auth);
-
-  const [userSocial] = useAuthState(auth);
 
   useEffect(() => {
     const err = errorFb || errorGit || errorGo;

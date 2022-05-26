@@ -11,7 +11,11 @@ const MyOrders = () => {
     'myOrder',
     async () =>
       await axios
-        .get(`http://localhost:5000/myOrders?email=${user.email}`)
+        .get(`http://localhost:5000/myOrders?email=${user.email}`, {
+          headers: {
+            author: `Bearer ${localStorage.getItem('token')}`,
+          },
+        })
         .then((res) => res.data)
   );
   if (isLoading) return <LoadingComponent />;
@@ -30,7 +34,7 @@ const MyOrders = () => {
             </tr>
           </thead>
           <tbody>
-            {myOrder.map((order) => (
+            {myOrder?.map((order) => (
               <tr>
                 <td>1</td>
                 <td>

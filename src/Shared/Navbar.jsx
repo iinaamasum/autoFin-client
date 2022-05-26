@@ -8,12 +8,14 @@ import auth from '../firebase.init';
 
 const Navbar = ({ children }) => {
   const [user] = useAuthState(auth);
+
   const navLinks = [
     { id: 1, path: '/', name: 'Home' },
     { id: 2, path: '/products', name: 'Products' },
     { id: 3, path: '/review', name: 'Review' },
     { id: 4, path: '/dashboard', name: 'Dashboard' },
   ];
+
   return (
     <section className="">
       <div className="drawer drawer-end">
@@ -43,38 +45,45 @@ const Navbar = ({ children }) => {
               </div>
 
               <div className="flex-none hidden lg:block">
-                <ul className="menu menu-horizontal gap-4 text-md font-semibold mr-4">
-                  {navLinks.map((link) => (
-                    <li key={link.id}>
-                      <NavLink to={link.path} className="rounded-lg">
-                        {link.name}
-                      </NavLink>
-                    </li>
-                  ))}
-                </ul>
-                {user ? (
-                  <button
-                    onClick={() => signOut(auth)}
-                    className="btn btn-accent my-2"
-                  >
-                    Sign Out
-                  </button>
-                ) : (
-                  <>
-                    <Link
-                      className="btn btn-accent text-white my-2 mr-2"
-                      to="/login"
-                    >
-                      LogIn
-                    </Link>
-                    <Link
-                      className="btn bg-white hover:bg-gray-100 outline-none border-0 text-accent"
-                      to="/register"
-                    >
-                      Register
-                    </Link>
-                  </>
-                )}
+                <div className="flex items-center">
+                  <ul className="menu menu-horizontal gap-4 text-md font-semibold mr-4">
+                    {navLinks.map((link) => (
+                      <li key={link.id}>
+                        <NavLink to={link.path} className="rounded-lg">
+                          {link.name}
+                        </NavLink>
+                      </li>
+                    ))}
+                  </ul>
+                  {user ? (
+                    <div className="flex items-center">
+                      <p className="text-green-600 font-semibold mr-4">
+                        {user.displayName}
+                      </p>
+                      <button
+                        onClick={() => signOut(auth)}
+                        className="btn btn-accent my-2"
+                      >
+                        Sign Out
+                      </button>
+                    </div>
+                  ) : (
+                    <>
+                      <Link
+                        className="btn btn-accent text-white my-2 mr-2"
+                        to="/login"
+                      >
+                        LogIn
+                      </Link>
+                      <Link
+                        className="btn bg-white hover:bg-gray-100 outline-none border-0 text-accent"
+                        to="/register"
+                      >
+                        Register
+                      </Link>
+                    </>
+                  )}
+                </div>
               </div>
             </div>
           </div>

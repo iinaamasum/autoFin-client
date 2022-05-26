@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useEffect } from 'react';
 import {
   useAuthState,
@@ -24,12 +25,31 @@ const Login = () => {
   } = useForm();
 
   const onSubmit = async (data) => {
-    await signInWithEmailAndPassword(data.email, data.password);
+    console.log(data);
+    try {
+      await signInWithEmailAndPassword(data.email, data.password);
+      const { data: dataToken } = await axios.post(
+        'http://localhost:5000/login',
+        {
+          email: data.email,
+        }
+      );
+      localStorage.setItem('token', dataToken.token);
+    } catch (err) {
+      toast.error(err.message);
+    }
   };
 
   useEffect(() => {
     if (user) {
-      toast.success(`Welcome ${user.displayName}`);
+      const tokenSet = async () => {
+        const { data } = await axios.post('http://localhost:5000/login', {
+          email: user.email,
+        });
+        localStorage.setItem('token', data.token);
+      };
+      tokenSet();
+      toast.success(`Welcome`);
       navigate(from, { replace: true });
     }
   }, [user, navigate, from]);

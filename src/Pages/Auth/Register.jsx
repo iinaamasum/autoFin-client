@@ -4,11 +4,14 @@ import {
   useCreateUserWithEmailAndPassword,
 } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
-import { Link, useNavigate } from 'react-router-dom';
+import toast from 'react-hot-toast';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init.js';
 import Social from './Social';
 
 const Register = () => {
+  const location = useLocation();
+  const from = location.state?.from?.pathname || '/';
   const navigate = useNavigate();
   const [name, setName] = useState('');
   const {
@@ -17,7 +20,7 @@ const Register = () => {
     handleSubmit,
   } = useForm();
   const [createUserWithEmailAndPassword, userInput, loadingInput, errorInput] =
-    useCreateUserWithEmailAndPassword(auth);
+    useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
   const [user] = useAuthState(auth);
 
   const onSubmit = async (data) => {
@@ -30,7 +33,9 @@ const Register = () => {
   useEffect(() => {
     if (user) {
       user.displayName = name;
-      navigate('/');
+      // console.log(user.displayName, name);
+      toast.success(`Welcome ${user.displayName}`);
+      navigate(from, { replace: true });
     }
   }, [user]);
 

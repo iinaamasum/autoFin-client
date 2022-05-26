@@ -2,11 +2,13 @@ import axios from 'axios';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useQuery } from 'react-query';
+import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import LoadingComponent from '../../Shared/LoadingComponent';
 
 const MyProfile = () => {
   const [user] = useAuthState(auth);
+  const navigate = useNavigate();
   const { data: userData, isLoading } = useQuery(
     ['user'],
     async () =>
@@ -36,6 +38,12 @@ const MyProfile = () => {
               <p>Education: {userData?.education}</p>
               <p>Address: {userData?.address}</p>
               <p>LinkedIn: {userData?.linkedin} </p>
+              <button
+                onClick={() => navigate('/dashboard/updateProfile')}
+                className="btn btn-outline"
+              >
+                Update Profile
+              </button>
             </div>
           </div>
         </div>
