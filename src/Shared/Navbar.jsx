@@ -1,8 +1,13 @@
+import { signOut } from 'firebase/auth';
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import toast from 'react-hot-toast';
 import { MdOutlineMenuOpen } from 'react-icons/md';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+import auth from '../firebase.init';
 
 const Navbar = ({ children }) => {
+  const [user] = useAuthState(auth);
   const navLinks = [
     { id: 1, path: '/', name: 'Home' },
     { id: 2, path: '/products', name: 'Products' },
@@ -47,6 +52,29 @@ const Navbar = ({ children }) => {
                     </li>
                   ))}
                 </ul>
+                {user ? (
+                  <button
+                    onClick={() => signOut(auth)}
+                    className="btn btn-accent my-2"
+                  >
+                    Sign Out
+                  </button>
+                ) : (
+                  <>
+                    <Link
+                      className="btn btn-accent text-white my-2 mr-2"
+                      to="/login"
+                    >
+                      LogIn
+                    </Link>
+                    <Link
+                      className="btn bg-white hover:bg-gray-100 outline-none border-0 text-accent"
+                      to="/register"
+                    >
+                      Register
+                    </Link>
+                  </>
+                )}
               </div>
             </div>
           </div>
@@ -63,6 +91,30 @@ const Navbar = ({ children }) => {
                 </NavLink>
               </li>
             ))}
+            {user ? (
+              <button
+                onClick={() => {
+                  toast.success(`Good Bye ${user.displayName}`);
+                  signOut(auth);
+                }}
+                className="btn btn-outline text-lg rounded-full capitalize mr-2"
+                to="/login"
+              >
+                Sign Out
+              </button>
+            ) : (
+              <>
+                <Link className="btn btn-accent mr-2" to="/login">
+                  LogIn
+                </Link>
+                <Link
+                  className="btn bg-white hover:bg-gray-100 outline-none border-0 text-accent mr-2"
+                  to="/register"
+                >
+                  Register
+                </Link>
+              </>
+            )}
           </ul>
         </div>
       </div>
