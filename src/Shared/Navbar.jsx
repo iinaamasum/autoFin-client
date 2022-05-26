@@ -43,7 +43,7 @@ const Navbar = ({ children }) => {
               </div>
 
               <div className="flex-none hidden lg:block">
-                <ul className="menu menu-horizontal gap-4 text-md font-semibold">
+                <ul className="menu menu-horizontal gap-4 text-md font-semibold mr-4">
                   {navLinks.map((link) => (
                     <li key={link.id}>
                       <NavLink to={link.path} className="rounded-lg">
