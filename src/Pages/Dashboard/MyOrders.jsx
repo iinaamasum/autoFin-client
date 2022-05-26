@@ -19,6 +19,11 @@ const MyOrders = () => {
         .then((res) => res.data)
   );
   if (isLoading) return <LoadingComponent />;
+  const myOrderList = [];
+  for (let i = myOrder.length - 1; i >= 0; i--) {
+    myOrderList.push(myOrder[i]);
+  }
+
   return (
     <>
       <div className="overflow-x-auto mx-5">
@@ -34,9 +39,9 @@ const MyOrders = () => {
             </tr>
           </thead>
           <tbody>
-            {myOrder?.map((order) => (
-              <tr>
-                <td>1</td>
+            {myOrderList?.map((order, index) => (
+              <tr key={order._id}>
+                <td>{index + 1}</td>
                 <td>
                   <div className="avatar">
                     <div className="w-24 rounded-full">

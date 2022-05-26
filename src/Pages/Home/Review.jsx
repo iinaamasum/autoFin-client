@@ -24,7 +24,7 @@ const Review = () => {
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 my-10">
         {reviewsList.map((item) => (
-          <div className="card bg-base-100 shadow-xl">
+          <div key={item._id} className="card bg-base-100 shadow-xl">
             <div className="card-body">
               <h2 className="card-title">{user?.displayName}</h2>
               <p className="text-orange-600 text-xl">Rating: {item.rating}</p>

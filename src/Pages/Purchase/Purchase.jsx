@@ -11,7 +11,7 @@ import LoadingComponent from '../../Shared/LoadingComponent';
 const Purchase = () => {
   const { partsId } = useParams();
   const [user] = useAuthState(auth);
-  // console.log(partsId);
+
   const {
     register,
     formState: { errors },
@@ -45,6 +45,7 @@ const Purchase = () => {
       axios
         .post(`http://localhost:5000/product`, {
           ...data,
+          img: img,
           name: name,
           email: user.email,
           price: product.price,
@@ -166,8 +167,6 @@ const Purchase = () => {
                 type="submit"
               />
             </form>
-
-            {/* <button className="btn btn-primary">Get Started</button> */}
           </div>
         </div>
       </div>
