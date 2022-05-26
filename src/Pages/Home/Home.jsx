@@ -4,6 +4,7 @@ import BusinessSummary from './BusinessSummary';
 import CollectionImgCollege from './CollectionImgCollege';
 import HeroSection from './HeroSection';
 import Parts from './Parts';
+import Review from './Review';
 import SubscribeNow from './SubscribeNow';
 
 const Home = () => {
@@ -15,6 +16,7 @@ const Home = () => {
       <HeroSection />
       <BusinessSummary />
       <Parts />
+      <Review />
     </div>
   );
 };

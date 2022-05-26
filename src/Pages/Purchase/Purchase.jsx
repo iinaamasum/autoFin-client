@@ -10,7 +10,7 @@ import LoadingComponent from '../../Shared/LoadingComponent';
 const Purchase = () => {
   const { partsId } = useParams();
   const [user] = useAuthState(auth);
-  console.log(partsId);
+  // console.log(partsId);
   const {
     register,
     formState: { errors },
