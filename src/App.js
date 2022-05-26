@@ -3,6 +3,10 @@ import { Route, Routes } from 'react-router-dom';
 import Login from './Pages/Auth/Login';
 import Register from './Pages/Auth/Register';
 import RequireAuth from './Pages/Auth/RequireAuth';
+import AddReview from './Pages/Dashboard/AddReview';
+import Dashboard from './Pages/Dashboard/Dashboard';
+import MyOrders from './Pages/Dashboard/MyOrders';
+import MyProfile from './Pages/Dashboard/MyProfile';
 import Home from './Pages/Home/Home';
 import Purchase from './Pages/Purchase/Purchase';
 import Footer from './Shared/Footer';
@@ -25,6 +29,18 @@ function App() {
               </RequireAuth>
             }
           />
+          <Route
+            path="/dashboard"
+            element={
+              <RequireAuth>
+                <Dashboard />
+              </RequireAuth>
+            }
+          >
+            <Route index element={<MyOrders />} />
+            <Route path="addReview" element={<AddReview />} />
+            <Route path="myProfile" element={<MyProfile />} />
+          </Route>
         </Routes>
         <Footer />
         <Toaster />
