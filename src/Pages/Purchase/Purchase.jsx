@@ -29,8 +29,8 @@ const Purchase = () => {
     return <LoadingComponent />;
   }
 
-  const onSubmit = async (data) => {
-    // await signInWithEmailAndPassword(data.email, data.password);
+  const onSubmit = (data) => {
+    console.log(data);
   };
   const { name, img, min_order, price, quantity, des } = product;
   return (
@@ -74,6 +74,22 @@ const Purchase = () => {
                   />
                 </div>
               </div>
+
+              <div className="form-control w-full">
+                <label className="">
+                  <span className=" font-semibold text-lg">
+                    Quantity Needed
+                  </span>
+                </label>
+                <input
+                  type="number"
+                  placeholder="items needed"
+                  className="input input-bordered w-full rounded-lg"
+                  required
+                  {...register('item_needed')}
+                />
+              </div>
+
               <div className="form-control w-full">
                 <label className="">
                   <span className=" font-semibold text-lg">Phone Number</span>
@@ -82,20 +98,9 @@ const Purchase = () => {
                   type="number"
                   placeholder="015********"
                   className="input input-bordered w-full rounded-lg"
-                  {...register('password', {
-                    required: {
-                      value: true,
-                      message: 'Phone is Required !!!',
-                    },
-                  })}
+                  required
+                  {...register('phone')}
                 />
-                <label className="level font-bold">
-                  {errors.password?.type === 'required' && (
-                    <span className="label-text-alt text-red-500">
-                      {errors.password.message}
-                    </span>
-                  )}
-                </label>
               </div>
               <div className="form-control w-full">
                 <label className="">
@@ -105,20 +110,9 @@ const Purchase = () => {
                   type="number"
                   placeholder="015********"
                   className="rounded-lg w-full input"
-                  {...register('password', {
-                    required: {
-                      value: true,
-                      message: 'Phone is Required !!!',
-                    },
-                  })}
+                  required
+                  {...register('address')}
                 ></textarea>
-                <label className="level font-bold">
-                  {errors.password?.type === 'required' && (
-                    <span className="label-text-alt text-red-500">
-                      {errors.password.message}
-                    </span>
-                  )}
-                </label>
               </div>
 
               <input
