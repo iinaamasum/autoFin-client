@@ -36,17 +36,20 @@ const Social = () => {
     <div className="text-center">
       <button
         onClick={() => signInWithGoogle()}
-        class="mr-2 hover:text-slate-500"
+        className="mr-2 hover:text-slate-500"
       >
         <BsGoogle size={35} />
       </button>
       <button
         onClick={() => signInWithFacebook()}
-        class="mr-2 hover:text-slate-500"
+        className="mr-2 hover:text-slate-500"
       >
         <BsFacebook size={35} />
       </button>
-      <button onClick={() => signInWithGithub()} class=" hover:text-slate-500">
+      <button
+        onClick={() => signInWithGithub()}
+        className=" hover:text-slate-500"
+      >
         <BsGithub size={35} />
       </button>
     </div>

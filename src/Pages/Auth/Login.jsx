@@ -38,20 +38,20 @@ const Login = () => {
       <section className="mb-10 mt-24 md:mt-32">
         <div style={{ maxWidth: '1024px' }} className="container mx-auto px-4">
           <div className="md:flex md:flex-row-reverse">
-            <div class="card w-full md:w-1/2 bg-base-100 shadow-lg mx-auto">
-              <div class="card-body">
-                <h2 class="card-title mx-auto text-4xl md:my-5">LogIn</h2>
+            <div className="card w-full md:w-1/2 bg-base-100 shadow-lg mx-auto">
+              <div className="card-body">
+                <h2 className="card-title mx-auto text-4xl md:my-5">LogIn</h2>
                 <form className="w-full" onSubmit={handleSubmit(onSubmit)}>
-                  <div class="form-control w-full">
-                    <label class="">
-                      <span class="text-secondary font-semibold text-lg">
+                  <div className="form-control w-full mb-5">
+                    <label className="">
+                      <span className="text-secondary font-semibold text-lg">
                         Email
                       </span>
                     </label>
                     <input
                       type="text"
                       placeholder="example@email.com"
-                      class="input input-bordered w-full"
+                      className="input input-bordered w-full rounded-full"
                       {...register('email', {
                         required: {
                           value: true,
@@ -63,7 +63,7 @@ const Login = () => {
                         },
                       })}
                     />
-                    <label class="level font-bold">
+                    <label className="level font-bold">
                       {errors.email?.type === 'required' && (
                         <span className="label-text-alt text-red-500">
                           {errors.email.message}
@@ -76,16 +76,16 @@ const Login = () => {
                       )}
                     </label>
                   </div>
-                  <div class="form-control w-full">
-                    <label class="">
-                      <span class="text-secondary font-semibold text-lg">
+                  <div className="form-control w-full">
+                    <label className="">
+                      <span className="text-secondary font-semibold text-lg">
                         Password
                       </span>
                     </label>
                     <input
                       type="password"
                       placeholder="abcd123$"
-                      class="input input-bordered w-full"
+                      className="input input-bordered w-full rounded-full"
                       {...register('password', {
                         required: {
                           value: true,
@@ -98,7 +98,7 @@ const Login = () => {
                         },
                       })}
                     />
-                    <label class="level font-bold">
+                    <label className="level font-bold">
                       {errors.password?.type === 'required' && (
                         <span className="label-text-alt text-red-500">
                           {errors.password.message}
@@ -131,12 +131,14 @@ const Login = () => {
                   </p>
 
                   <input
-                    className="btn btn-accent my-3 w-full tracking-wider capitalize text-xl"
+                    className="btn btn-accent my-3 w-full tracking-wider capitalize text-xl rounded-full"
                     value="LogIn"
                     type="submit"
                   />
                 </form>
-                <div class="divider text-lg font-semibold">Social LogIn</div>
+                <div className="divider text-lg font-semibold">
+                  Social LogIn
+                </div>
                 <Social />
               </div>
             </div>

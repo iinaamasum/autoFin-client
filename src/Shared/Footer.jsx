@@ -20,41 +20,41 @@ const Footer = () => {
   ];
   return (
     <footer>
-      <div class="footer p-10 bg-slate-600 text-white">
+      <div className="footer p-10 bg-slate-600 text-white">
         <div>
-          <span class="footer-title">Important Links</span>
+          <span className="footer-title">Important Links</span>
 
           {navLinks.map((link) => (
-            <Link class="link link-hover" to={link.path} key={link.id}>
+            <Link className="link link-hover" to={link.path} key={link.id}>
               {link.name}
             </Link>
           ))}
         </div>
         <div>
-          <span class="footer-title">Services</span>
+          <span className="footer-title">Services</span>
           {services.map((link) => (
-            <Link class="link link-hover" to={link.path} key={link.id}>
+            <Link className="link link-hover" to={link.path} key={link.id}>
               {link.name}
             </Link>
           ))}
         </div>
         <div>
-          <span class="footer-title">Legal</span>
-          <a class="link link-hover">Terms of use</a>
-          <a class="link link-hover">Privacy policy</a>
-          <a class="link link-hover">Cookie policy</a>
+          <span className="footer-title">Legal</span>
+          <a className="link link-hover">Terms of use</a>
+          <a className="link link-hover">Privacy policy</a>
+          <a className="link link-hover">Cookie policy</a>
         </div>
       </div>
-      <div class="footer bg-black px-10 py-4 text-white">
-        <div class="">
+      <div className="footer bg-black px-10 py-4 text-white">
+        <div className="">
           <p className="text-2xl my-0 text-red-600">
             autoFin Manufacturer Ltd.
           </p>
           <p className="my-0">Providing reliable parts since 1970</p>
           <p className="my-0">Copyright &copy; {year}. All rights reserved</p>
         </div>
-        <div class="md:place-self-center md:justify-self-end">
-          <div class="grid grid-flow-col gap-4">
+        <div className="md:place-self-center md:justify-self-end">
+          <div className="grid grid-flow-col gap-4">
             <div className="text-accent flex justify-center items-center">
               <a
                 href="https://www.facebook.com/iinaamasum"
