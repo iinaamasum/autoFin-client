@@ -7,6 +7,7 @@ import AddReview from './Pages/Dashboard/AddReview';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import MyOrders from './Pages/Dashboard/MyOrders';
 import MyProfile from './Pages/Dashboard/MyProfile';
+import UpdateProfile from './Pages/Dashboard/UpdateProfile';
 import Home from './Pages/Home/Home';
 import Purchase from './Pages/Purchase/Purchase';
 import Footer from './Shared/Footer';
@@ -40,6 +41,7 @@ function App() {
             <Route index element={<MyOrders />} />
             <Route path="addReview" element={<AddReview />} />
             <Route path="myProfile" element={<MyProfile />} />
+            <Route path="updateProfile" element={<UpdateProfile />} />
           </Route>
         </Routes>
         <Footer />
