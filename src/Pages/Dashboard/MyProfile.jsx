@@ -26,13 +26,13 @@ const MyProfile = () => {
         </h1>
 
         <div className="mx-5 mt-10">
-          <div class="card bg-base-100 shadow-xl">
-            <div class="card-body">
+          <div className="card bg-base-100 shadow-xl">
+            <div className="card-body">
               <h1 className="text-4xl font-semibold text-purple-600">
                 Your Information
               </h1>
 
-              <h2 class="card-title">{user.displayName}</h2>
+              <h2 className="card-title">{user.displayName}</h2>
               <p>Email: {user.email}</p>
               <p>Phone: {userData?.phone}</p>
               <p>Education: {userData?.education}</p>

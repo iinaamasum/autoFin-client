@@ -2,6 +2,7 @@ import axios from 'axios';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
+import toast from 'react-hot-toast';
 import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
 import auth from '../../firebase.init';
@@ -17,30 +18,62 @@ const Purchase = () => {
     handleSubmit,
   } = useForm();
 
-  const { data: product, isLoading } = useQuery(
-    ['product', partsId],
+  const {
+    data: product,
+    isLoading,
+    refetch,
+  } = useQuery(
+    ['product', partsId, handleSubmit],
     async () =>
       await axios
         .get(`http://localhost:5000/product/${partsId}`)
         .then((res) => res.data)
   );
+  console.log(product);
 
   if (isLoading) {
     return <LoadingComponent />;
   }
+  const { _id, name, img, min_order, price, quantity, des } = product;
 
   const onSubmit = (data) => {
-    console.log(data);
+    if (quantity - Number(data.item_needed) < 0) {
+      toast.error('Not enough quantity');
+    } else if (Number(data.item_needed) < min_order) {
+      toast.error('Minimum order is ' + min_order);
+    } else {
+      axios
+        .post(`http://localhost:5000/product`, {
+          ...data,
+          name: name,
+          email: user.email,
+          price: product.price,
+        })
+        .then((res) => res.data);
+      axios
+        .put(`http://localhost:5000/product/${_id}`, {
+          quantity: quantity - Number(data.item_needed),
+        })
+        .then((res) => {
+          refetch();
+        });
+
+      toast.success(`Thank you for your purchase. Please pay now.`);
+    }
   };
-  const { name, img, min_order, price, quantity, des } = product;
+
   return (
     <section>
-      <div class="hero min-h-screen bg-base-200">
-        <div class="hero-content flex-col lg:flex-row">
-          <img alt="product" src={img} class="max-w-sm rounded-lg shadow-2xl" />
+      <div className="hero min-h-screen bg-base-200 mt-12">
+        <div className="hero-content flex-col lg:flex-row">
+          <img
+            alt="product"
+            src={img}
+            className="max-w-sm rounded-lg shadow-2xl"
+          />
           <div>
-            <h1 class="text-5xl font-bold">{name}</h1>
-            <p class="py-6">{des}</p>
+            <h1 className="text-5xl font-bold">{name}</h1>
+            <p className="py-6">{des}</p>
             <p className="text-2xl md:text-4xl text-orange-500 font-semibold">
               ${price}
             </p>
@@ -51,7 +84,7 @@ const Purchase = () => {
 
             <form className="w-full" onSubmit={handleSubmit(onSubmit)}>
               <div className="flex items-center md:gap-x-2">
-                <div className="form-control w-full mb-5">
+                <div className="form-control w-full">
                   <label className="">
                     <span className=" font-semibold text-lg">Name</span>
                   </label>
@@ -62,7 +95,7 @@ const Purchase = () => {
                     value={user.displayName}
                   />
                 </div>
-                <div className="form-control w-full mb-5">
+                <div className="form-control w-full">
                   <label className="">
                     <span className=" font-semibold text-lg">Email</span>
                   </label>
@@ -73,6 +106,18 @@ const Purchase = () => {
                     value={user.email}
                   />
                 </div>
+              </div>
+
+              <div className="form-control w-full">
+                <label className="">
+                  <span className=" font-semibold text-lg">Product Name</span>
+                </label>
+                <input
+                  type="text"
+                  className="bg-gray-300 px-5 py-3 rounded-lg w-full text-green-600 font-semibold"
+                  disabled
+                  value={name}
+                />
               </div>
 
               <div className="form-control w-full">
@@ -122,7 +167,7 @@ const Purchase = () => {
               />
             </form>
 
-            {/* <button class="btn btn-primary">Get Started</button> */}
+            {/* <button className="btn btn-primary">Get Started</button> */}
           </div>
         </div>
       </div>

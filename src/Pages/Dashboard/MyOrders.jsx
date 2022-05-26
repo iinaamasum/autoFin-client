@@ -21,8 +21,8 @@ const MyOrders = () => {
   if (isLoading) return <LoadingComponent />;
   return (
     <>
-      <div class="overflow-x-auto mx-5">
-        <table class="table w-full">
+      <div className="overflow-x-auto mx-5">
+        <table className="table w-full">
           <thead>
             <tr>
               <th></th>
@@ -46,7 +46,7 @@ const MyOrders = () => {
                 </td>
                 <td>{order.name}</td>
                 <td>${order.price}</td>
-                <td>{order.quantity}</td>
+                <td>{order.item_needed}</td>
                 <td>
                   <div className="">
                     <div className="btn btn-sm">Pay</div>
