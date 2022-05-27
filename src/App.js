@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import Login from './Pages/Auth/Login';
 import Register from './Pages/Auth/Register';
 import RequireAuth from './Pages/Auth/RequireAuth';
+import Blog from './Pages/Blog/Blog';
 import AddProduct from './Pages/Dashboard/AddProduct';
 import AddReview from './Pages/Dashboard/AddReview';
 import Dashboard from './Pages/Dashboard/Dashboard';
@@ -21,6 +22,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/blog" element={<Blog />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route
