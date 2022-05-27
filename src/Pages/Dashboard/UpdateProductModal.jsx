@@ -1,26 +1,96 @@
+import axios from 'axios';
 import React from 'react';
+import { useForm } from 'react-hook-form';
+import toast from 'react-hot-toast';
 
-const UpdateProductModal = () => {
+const UpdateProductModal = ({ updateProduct, refetch }) => {
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+    reset,
+  } = useForm();
+  const { name, price, quantity, min_order } = updateProduct;
+  const onSubmit = async (data) => {
+    axios
+      .put(`http://localhost:5000/product/${updateProduct._id}`, data)
+      .then((res) => {
+        toast.success('Product updated successfully');
+        refetch();
+      });
+    reset();
+  };
   return (
-    <div>
-      {/* <!-- The button to open modal --> */}
-
-      {/* <!-- Put this part before </body> tag --> */}
+    <div className="">
       <input type="checkbox" id="update-product-modal" class="modal-toggle" />
-      <div class="modal modal-bottom sm:modal-middle">
+      <div class="modal modal-bottom sm:modal-middle mt-10 md:mt-20">
         <div class="modal-box">
-          <h3 class="font-bold text-lg">
-            Congratulations random Interner user!
-          </h3>
-          <p class="py-4">
-            You've been selected for a chance to get one year of subscription to
-            use Wikipedia for free!
-          </p>
-          <div class="modal-action">
-            <label for="update-product-modal" class="btn">
-              Yay!
+          <label
+            htmlFor="update-product-modal"
+            className="btn btn-sm btn-circle absolute right-2 top-2"
+          >
+            ✕
+          </label>
+          <h3 class="font-bold text-lg">Product Name: {name}</h3>
+          <p>Price: ${price}</p>
+          <p>Minimum Order: ${min_order}</p>
+          <p>Quantity: ${quantity}</p>
+          <form
+            onSubmit={handleSubmit(onSubmit)}
+            className="mt-10 mb-2 bg-gray-200 px-4 md:px-8 py-5 rounded-lg"
+          >
+            <h2 className="text-xl mb-2 font-bold text-purple-700">
+              Update the below field
+            </h2>
+            <div className="form-control w-full mb-5">
+              <label className="">
+                <span className=" font-semibold text-lg">Price</span>
+              </label>
+              <input
+                type="number"
+                className="input px-5 py-3 rounded-lg w-full text-green-600 font-semibold"
+                placeholder="Price"
+                {...register('price')}
+                required
+              />
+            </div>
+            <div className="form-control w-full mb-5">
+              <label className="">
+                <span className=" font-semibold text-lg">Quantity</span>
+              </label>
+              <input
+                type="number"
+                className="input px-5 py-3 rounded-lg w-full text-green-600 font-semibold"
+                placeholder="Quantity"
+                {...register('quantity')}
+                required
+              />
+            </div>
+
+            <div className="md:flex gap-x-5">
+              <div className="form-control w-full mb-5">
+                <label className="">
+                  <span className=" font-semibold text-lg">Minimum Order</span>
+                </label>
+                <input
+                  type="number"
+                  className="input px-5 py-3 rounded-lg w-full text-green-600 font-semibold"
+                  placeholder="Minimum Order"
+                  {...register('min_order')}
+                  required
+                />
+              </div>
+            </div>
+
+            <label>
+              <input
+                htmlFor="update-product-modal"
+                type="submit"
+                value="Update"
+                className="w-full btn btn-success"
+              />
             </label>
-          </div>
+          </form>
         </div>
       </div>
     </div>

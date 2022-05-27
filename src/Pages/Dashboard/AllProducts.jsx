@@ -4,10 +4,11 @@ import toast from 'react-hot-toast';
 import { useQuery } from 'react-query';
 import LoadingComponent from '../../Shared/LoadingComponent';
 import ConfirmDeleteModal from './ConfirmDeleteModal';
+import UpdateProductModal from './UpdateProductModal';
 
 const AllProducts = () => {
   const [deleteId, setDeleteId] = useState(null);
-  const [updateId, setUpdateId] = useState(null);
+  const [updateProduct, setUpdateProduct] = useState(null);
   const {
     data: products,
     isLoading,
@@ -63,7 +64,7 @@ const AllProducts = () => {
                 <td>${product.min_order}</td>
                 <td>
                   <label
-                    onClick={() => setUpdateId(product._id)}
+                    onClick={() => setUpdateProduct(product)}
                     for="update-product-modal"
                     className="btn btn-xs mr-1"
                   >
@@ -81,6 +82,12 @@ const AllProducts = () => {
 
                 {deleteId?.length > 0 && (
                   <ConfirmDeleteModal deleteId={deleteId} refetch={refetch} />
+                )}
+                {updateProduct && (
+                  <UpdateProductModal
+                    updateProduct={updateProduct}
+                    refetch={refetch}
+                  />
                 )}
               </tr>
             ))}
