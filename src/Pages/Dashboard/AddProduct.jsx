@@ -104,7 +104,7 @@ const AddProduct = () => {
                 type="number"
                 className="input px-5 py-3 rounded-lg w-full text-green-600 font-semibold"
                 placeholder="Minimum Order"
-                {...register('min_oder')}
+                {...register('min_order')}
                 required
               />
             </div>

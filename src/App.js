@@ -6,7 +6,10 @@ import RequireAuth from './Pages/Auth/RequireAuth';
 import Blog from './Pages/Blog/Blog';
 import AddProduct from './Pages/Dashboard/AddProduct';
 import AddReview from './Pages/Dashboard/AddReview';
+import AllProducts from './Pages/Dashboard/AllProducts';
+import AllUser from './Pages/Dashboard/AllUser';
 import Dashboard from './Pages/Dashboard/Dashboard';
+import ManageOrder from './Pages/Dashboard/ManageOrder';
 import MyOrders from './Pages/Dashboard/MyOrders';
 import MyProfile from './Pages/Dashboard/MyProfile';
 import UpdateProfile from './Pages/Dashboard/UpdateProfile';
@@ -45,6 +48,9 @@ function App() {
             <Route path="addReview" element={<AddReview />} />
             <Route path="myProfile" element={<MyProfile />} />
             <Route path="updateProfile" element={<UpdateProfile />} />
+            <Route path="allProducts" element={<AllProducts />} />
+            <Route path="allUser" element={<AllUser />} />
+            <Route path="manageOrder" element={<ManageOrder />} />
             <Route path="addProduct" element={<AddProduct />} />
           </Route>
         </Routes>
