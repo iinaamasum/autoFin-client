@@ -60,8 +60,8 @@ const AllProducts = () => {
                 </td>
                 <td>{product.name}</td>
                 <td>${product.price}</td>
-                <td>${product.quantity}</td>
-                <td>${product.min_order}</td>
+                <td>{product.quantity}</td>
+                <td>{product.min_order}</td>
                 <td>
                   <label
                     onClick={() => setUpdateProduct(product)}

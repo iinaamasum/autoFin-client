@@ -13,7 +13,7 @@ const AllUser = () => {
     isLoading,
     refetch,
   } = useQuery(
-    'user',
+    'users',
     async () =>
       await axios.get('http://localhost:5000/user').then((res) => res.data)
   );
