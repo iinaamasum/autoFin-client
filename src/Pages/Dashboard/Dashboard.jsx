@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { MdDashboard } from 'react-icons/md';
 import { Link, NavLink, Outlet } from 'react-router-dom';
 
 const Dashboard = () => {
+  const [activeLink, setActiveLink] = useState(true);
   return (
     <div className="mt-20 container mx-auto">
       <div className="drawer drawer-mobile">
@@ -24,28 +25,69 @@ const Dashboard = () => {
           <ul className="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content gap-y-4">
             {/* <!-- Sidebar content here --> */}
             <li>
-              <Link to="/dashboard">My Orders</Link>
+              <Link
+                onClick={() => setActiveLink(true)}
+                className={`${activeLink ? 'active' : ''}`}
+                to="/dashboard"
+              >
+                My Orders
+              </Link>
             </li>
             <li>
-              <NavLink to="/dashboard/addReview">Add Review</NavLink>
+              <NavLink
+                onClick={() => setActiveLink(false)}
+                to="/dashboard/addReview"
+              >
+                Add Review
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/dashboard/myProfile">My Profile</NavLink>
+              <NavLink
+                onClick={() => setActiveLink(false)}
+                to="/dashboard/myProfile"
+              >
+                My Profile
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/dashboard/updateProfile">Update Profile</NavLink>
+              <NavLink
+                onClick={() => setActiveLink(false)}
+                to="/dashboard/updateProfile"
+              >
+                Update Profile
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/dashboard/addProduct">Add Product</NavLink>
+              <NavLink
+                onClick={() => setActiveLink(false)}
+                to="/dashboard/addProduct"
+              >
+                Add Product
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/dashboard/allProducts">Manage Products</NavLink>
+              <NavLink
+                onClick={() => setActiveLink(false)}
+                to="/dashboard/allProducts"
+              >
+                Manage Products
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/dashboard/allUser">Manage Users</NavLink>
+              <NavLink
+                onClick={() => setActiveLink(false)}
+                to="/dashboard/allUser"
+              >
+                Manage Users
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/dashboard/manageOrder">Manage All Order</NavLink>
+              <NavLink
+                onClick={() => setActiveLink(false)}
+                to="/dashboard/manageOrder"
+              >
+                Manage All Order
+              </NavLink>
             </li>
           </ul>
         </div>

@@ -40,6 +40,9 @@ const MyOrders = () => {
 
   return (
     <>
+      <h1 className="text-2xl md:text-4xl text-purple-600 font-bold ml-2 md:ml-5">
+        My Orders
+      </h1>
       <div className="overflow-x-auto mx-5">
         <table className="table w-full">
           <thead>
@@ -48,7 +51,7 @@ const MyOrders = () => {
               <th>Photo</th>
               <th>Name</th>
               <th>Price</th>
-              <th>Quantity</th>
+              <th>Order Quantity</th>
               <th>Status</th>
             </tr>
           </thead>
