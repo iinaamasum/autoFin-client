@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ManageOrder = () => {
-  return <div>manageOrder</div>;
+  return <></>;
 };
 
 export default ManageOrder;
