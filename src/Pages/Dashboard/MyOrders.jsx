@@ -1,13 +1,21 @@
 import axios from 'axios';
+import { signOut } from 'firebase/auth';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import toast from 'react-hot-toast';
 import { useQuery } from 'react-query';
+import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import LoadingComponent from '../../Shared/LoadingComponent';
 
 const MyOrders = () => {
   const [user] = useAuthState(auth);
-  const { data: myOrder, isLoading } = useQuery(
+  const navigate = useNavigate();
+  const {
+    data: myOrder,
+    isLoading,
+    isError,
+  } = useQuery(
     'myOrder',
     async () =>
       await axios
@@ -19,8 +27,14 @@ const MyOrders = () => {
         .then((res) => res.data)
   );
   if (isLoading) return <LoadingComponent />;
+
+  if (isError) {
+    toast.error('UnAuthorized Access');
+    signOut(auth);
+    navigate('/login');
+  }
   const myOrderList = [];
-  for (let i = myOrder.length - 1; i >= 0; i--) {
+  for (let i = myOrder?.length - 1; i >= 0; i--) {
     myOrderList.push(myOrder[i]);
   }
 

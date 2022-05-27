@@ -35,7 +35,7 @@ const BrandPartner = () => {
             key={item.id}
             src={item.img}
             alt="brand"
-            className="w-full h-full border-2 rounded-lg shadow-lg"
+            className="w-full h-full border-2 rounded-lg"
           />
         ))}
       </div>

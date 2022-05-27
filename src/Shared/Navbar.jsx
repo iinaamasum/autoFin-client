@@ -31,8 +31,10 @@ const Navbar = ({ children }) => {
             >
               <div className="flex-1 px-2 mx-2 text-4xl font-bold">
                 {' '}
-                <span className="text-red-500">auto</span>
-                <span className="text-blue-700">Fin</span>
+                <Link to="/">
+                  <span className="text-red-500">auto</span>
+                  <span className="text-blue-700">Fin</span>
+                </Link>
               </div>
               <div className="flex-none lg:hidden">
                 <label

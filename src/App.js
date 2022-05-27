@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import Login from './Pages/Auth/Login';
 import Register from './Pages/Auth/Register';
 import RequireAuth from './Pages/Auth/RequireAuth';
+import AddProduct from './Pages/Dashboard/AddProduct';
 import AddReview from './Pages/Dashboard/AddReview';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import MyOrders from './Pages/Dashboard/MyOrders';
@@ -42,6 +43,7 @@ function App() {
             <Route path="addReview" element={<AddReview />} />
             <Route path="myProfile" element={<MyProfile />} />
             <Route path="updateProfile" element={<UpdateProfile />} />
+            <Route path="addProduct" element={<AddProduct />} />
           </Route>
         </Routes>
         <Footer />
