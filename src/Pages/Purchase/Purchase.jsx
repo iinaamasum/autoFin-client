@@ -29,7 +29,7 @@ const Purchase = () => {
         .get(`https://blooming-fortress-97967.herokuapp.com/product/${partsId}`)
         .then((res) => res.data)
   );
-  console.log(product);
+  // console.log(product);
 
   if (isLoading) {
     return <LoadingComponent />;
@@ -37,6 +37,9 @@ const Purchase = () => {
   const { _id, name, img, min_order, price, quantity, des } = product;
 
   const onSubmit = (data) => {
+    if (!data.item_needed) {
+      data.item_needed = min_order;
+    }
     if (quantity - Number(data.item_needed) < 0) {
       toast.error('Not enough quantity');
     } else if (Number(data.item_needed) < min_order) {
@@ -129,9 +132,9 @@ const Purchase = () => {
                 </label>
                 <input
                   type="number"
-                  placeholder="items needed"
+                  placeholder={`${min_order} or more`}
                   className="input input-bordered w-full rounded-lg"
-                  required
+                  // required
                   {...register('item_needed')}
                 />
               </div>

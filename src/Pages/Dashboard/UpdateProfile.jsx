@@ -10,8 +10,8 @@ const UpdateProfile = () => {
   const { register, reset, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
-    console.log(user.email);
+    // console.log(data);
+    // console.log(user.email);
     try {
       axios
         .put(

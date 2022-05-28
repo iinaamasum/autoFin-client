@@ -1,20 +1,23 @@
 import axios from 'axios';
 import { signOut } from 'firebase/auth';
-import React from 'react';
+import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import toast from 'react-hot-toast';
 import { useQuery } from 'react-query';
 import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import LoadingComponent from '../../Shared/LoadingComponent';
+import ConfirmUserDataDeleteModal from './ConfirmUserDataDeleteModal';
 
 const MyOrders = () => {
+  const [deleteId, setDeleteId] = useState(null);
   const [user] = useAuthState(auth);
   const navigate = useNavigate();
   const {
     data: myOrder,
     isLoading,
     isError,
+    refetch,
   } = useQuery(
     'myOrder',
     async () =>
@@ -79,10 +82,17 @@ const MyOrders = () => {
                         onClick={() =>
                           navigate(`/dashboard/payment/${order._id}`)
                         }
-                        className="btn btn-sm"
+                        className="btn btn-sm mr-1"
                       >
                         Pay
                       </button>
+                      <label
+                        onClick={() => setDeleteId(order._id)}
+                        htmlFor="confirmDelete"
+                        className="btn btn-sm btn-error"
+                      >
+                        delete
+                      </label>
                     </div>
                   )}
                   {order?.paid && (
@@ -98,6 +108,9 @@ const MyOrders = () => {
               </tr>
             ))}
           </tbody>
+          {deleteId?.length > 0 && (
+            <ConfirmUserDataDeleteModal deleteId={deleteId} refetch={refetch} />
+          )}
         </table>
       </div>
     </>

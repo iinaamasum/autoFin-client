@@ -63,7 +63,7 @@ const CheckoutForm = ({ product }) => {
     } else {
       setCardError('');
       setTransactionId(paymentIntent.id);
-      console.log(paymentIntent);
+
       setSuccess('Payment Successful');
 
       axios

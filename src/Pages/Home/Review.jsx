@@ -16,8 +16,13 @@ const Review = () => {
   );
   if (isLoading) return <LoadingComponent />;
   const reviewsList = [];
+  let count = 0;
   for (let i = reviews.length - 1; i >= 0; i--) {
     reviewsList.push(reviews[i]);
+    count++;
+    if (count >= 6) {
+      break;
+    }
   }
   return (
     <section className="container mx-auto px-4 md:px-10 lg:px-20">

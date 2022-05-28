@@ -14,7 +14,7 @@ const PartsCard = ({ item }) => {
         <div className="card-body">
           <h2 className="text-3xl font-semibold text-purple-700">{name}</h2>
           <div className="flex justify-center gap-x-5 items-center text-orange-600 font-semibold mt-2">
-            <p>Price: ${price}</p>
+            <p>Price: ${price} per unit</p>
             <p>Quantity: {quantity}</p>
           </div>
           <p className="font-semibold mb-2">Minimum Order: {min_order}</p>

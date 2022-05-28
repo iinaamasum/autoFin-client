@@ -59,7 +59,7 @@ const Navbar = ({ children }) => {
                   {user ? (
                     <div className="flex items-center">
                       <p className="text-green-600 font-semibold mr-4">
-                        {user.displayName}
+                        {user?.displayName}
                       </p>
                       <button
                         onClick={() => signOut(auth)}

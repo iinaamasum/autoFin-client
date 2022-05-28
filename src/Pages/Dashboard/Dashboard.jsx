@@ -40,7 +40,7 @@ const Dashboard = () => {
         <div className="drawer-content">
           {/* <!-- Page content here --> */}
           <div className="flex justify-between items-center px-4 mt-5">
-            <label for="my-drawer-2" className="drawer-button lg:hidden">
+            <label htmlFor="my-drawer-2" className="drawer-button lg:hidden">
               <MdDashboard size={40} />
             </label>
             <h2 className="text-4xl font-bold text-orange-600 mx-auto">
@@ -50,7 +50,7 @@ const Dashboard = () => {
           <Outlet />
         </div>
         <div className="drawer-side">
-          <label for="my-drawer-2" className="drawer-overlay"></label>
+          <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
           <ul className="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content gap-y-4">
             {/* <!-- Sidebar content here --> */}
 

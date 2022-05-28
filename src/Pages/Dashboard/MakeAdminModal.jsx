@@ -3,7 +3,7 @@ import React from 'react';
 import toast from 'react-hot-toast';
 
 const MakeAdminModal = ({ refetch, makeAdmin }) => {
-  console.log(makeAdmin.email);
+  // console.log(makeAdmin.email);
   const handleDelete = async () => {
     await axios
       .put(
@@ -28,25 +28,25 @@ const MakeAdminModal = ({ refetch, makeAdmin }) => {
   };
   return (
     <div>
-      <input type="checkbox" id="confirm-make-admin" class="modal-toggle" />
-      <div class="modal modal-bottom sm:modal-middle">
-        <div class="modal-box">
-          <h3 class="font-bold text-lg">
+      <input type="checkbox" id="confirm-make-admin" className="modal-toggle" />
+      <div className="modal modal-bottom sm:modal-middle">
+        <div className="modal-box">
+          <h3 className="font-bold text-lg">
             Are you sure you want to delete this product?
           </h3>
 
-          <div class="modal-action">
+          <div className="modal-action">
             <label
               onClick={handleDelete}
-              for="confirm-make-admin"
-              class="btn px-5"
+              htmlFor="confirm-make-admin"
+              className="btn px-5"
             >
               Yes
             </label>
             <label
               onClick={handleDeleteCancel}
-              for="confirm-make-admin"
-              class="btn btn-error px-5"
+              htmlFor="confirm-make-admin"
+              className="btn btn-error px-5"
             >
               No
             </label>

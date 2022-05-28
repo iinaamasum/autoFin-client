@@ -16,6 +16,7 @@ import Payment from './Pages/Dashboard/Payment';
 import UpdateProfile from './Pages/Dashboard/UpdateProfile';
 import Home from './Pages/Home/Home';
 import Purchase from './Pages/Purchase/Purchase';
+import Error404 from './Shared/Error404';
 import Footer from './Shared/Footer';
 import Navbar from './Shared/Navbar';
 
@@ -55,6 +56,7 @@ function App() {
             <Route path="manageOrder" element={<ManageOrder />} />
             <Route path="addProduct" element={<AddProduct />} />
           </Route>
+          <Route path="*" element={<Error404 />} />
         </Routes>
         <Footer />
         <Toaster />

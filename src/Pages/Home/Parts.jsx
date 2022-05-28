@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React from 'react';
 import { useQuery } from 'react-query';
+import LoadingComponent from '../../Shared/LoadingComponent';
 import PartsCard from './PartsCard';
 
 const Parts = () => {
@@ -15,12 +16,22 @@ const Parts = () => {
   );
 
   if (isLoading) {
-    return <span>Loading...</span>;
+    return <LoadingComponent />;
   }
 
   if (isError) {
     return <span>Error: </span>;
   }
+  const sixParts = [];
+  let count = 0;
+  for (let i = parts.length - 1; i > 0; i--) {
+    sixParts.push(parts[i]);
+    count++;
+    if (count >= 6) {
+      break;
+    }
+  }
+  // console.log(sixParts);
   return (
     <>
       <section
@@ -36,7 +47,7 @@ const Parts = () => {
           </h1>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
-          {parts.map((item) => (
+          {sixParts.map((item) => (
             <PartsCard key={item._id} item={item} />
           ))}
         </div>

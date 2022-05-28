@@ -25,7 +25,7 @@ const Login = () => {
   } = useForm();
 
   const onSubmit = async (data) => {
-    console.log(data);
+    // console.log(data);
     try {
       await signInWithEmailAndPassword(data.email, data.password);
       const { data: dataToken } = await axios.post(

@@ -37,7 +37,7 @@ const AddProduct = () => {
               img: img,
             })
             .then((res) => {
-              console.log(res.data);
+              // console.log(res.data);
               if (res.data.acknowledged) {
                 toast.success('Product added successfully');
                 reset();

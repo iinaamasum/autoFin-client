@@ -30,8 +30,8 @@ const AllUser = () => {
       <h1 className="mb-3 font-semibold text-4xl text-purple-600 mt-5">
         Manage All User
       </h1>
-      <div class="overflow-x-auto rounded-lg">
-        <table class="table w-full">
+      <div className="overflow-x-auto rounded-lg">
+        <table className="table w-full">
           <thead>
             <tr>
               <th></th>
@@ -55,7 +55,7 @@ const AllUser = () => {
                     </button>
                   ) : (
                     <label
-                      for="confirm-make-admin"
+                      htmlFor="confirm-make-admin"
                       onClick={() => setMakeAdmin(user)}
                       className="btn btn-xs"
                     >

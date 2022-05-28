@@ -41,24 +41,24 @@ const Payment = () => {
       <h1 className="text-3xl font-bold text-purple-700 text-center my-2">
         Payment
       </h1>
-      <div class="card w-full sm:w-1/2 mx-auto bg-base-100 shadow-xl">
+      <div className="card w-full sm:w-1/2 mx-auto bg-base-100 shadow-xl">
         <figure>
           <img className="w-full" src={img} alt="Shoes" />
         </figure>
-        <div class="mx-10 my-5">
-          <h2 class="card-title text-3xl">Product Name: {name}</h2>
-          <div class="text-lg font-semibold text-purple-500">
+        <div className="mx-10 my-5">
+          <h2 className="card-title text-3xl">Product Name: {name}</h2>
+          <div className="text-lg font-semibold text-purple-500">
             Email: {email}
           </div>
-          <div class="card-actions">
-            <div class="bg-error py-2 px-4 rounded-lg text-xl font-bold text-white">
+          <div className="card-actions">
+            <div className="bg-error py-2 px-4 rounded-lg text-xl font-bold text-white">
               Price: ${price} per unit
             </div>
-            <div class="bg-success py-2 px-4 rounded-lg text-xl font-bold text-white">
+            <div className="bg-success py-2 px-4 rounded-lg text-xl font-bold text-white">
               Purchase: {item_needed} units
             </div>
           </div>
-          <div class="mt-5">
+          <div className="mt-5">
             <Elements stripe={stripePromise}>
               <CheckoutForm product={product} />
             </Elements>

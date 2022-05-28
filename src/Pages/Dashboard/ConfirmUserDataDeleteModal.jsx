@@ -2,11 +2,11 @@ import axios from 'axios';
 import React from 'react';
 import toast from 'react-hot-toast';
 
-const ConfirmDeleteModal = ({ refetch, deleteId }) => {
+const ConfirmUserDataDeleteModal = ({ refetch, deleteId }) => {
   const handleDelete = async () => {
     await axios
       .delete(
-        `https://blooming-fortress-97967.herokuapp.com/product/${deleteId}`
+        `https://blooming-fortress-97967.herokuapp.com/userData/${deleteId}`
       )
       .then(() => {
         toast.success('Product deleted successfully');
@@ -52,4 +52,4 @@ const ConfirmDeleteModal = ({ refetch, deleteId }) => {
   );
 };
 
-export default ConfirmDeleteModal;
+export default ConfirmUserDataDeleteModal;

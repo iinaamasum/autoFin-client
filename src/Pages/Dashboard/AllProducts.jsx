@@ -29,15 +29,15 @@ const AllProducts = () => {
     toast.error('Something went wrong');
   }
 
-  console.log(deleteId);
+  // console.log(deleteId);
 
   return (
     <div className="container mx-auto px-1 md:px-10">
       <h1 className="mb-3 font-semibold text-4xl text-purple-600 mt-5">
         Manage All Product
       </h1>
-      <div class="overflow-x-auto rounded-lg">
-        <table class="table w-full">
+      <div className="overflow-x-auto rounded-lg">
+        <table className="table w-full">
           <thead>
             <tr>
               <th></th>
@@ -67,7 +67,7 @@ const AllProducts = () => {
                 <td>
                   <label
                     onClick={() => setUpdateProduct(product)}
-                    for="update-product-modal"
+                    htmlFor="update-product-modal"
                     className="btn btn-xs mr-1"
                   >
                     update
@@ -75,7 +75,7 @@ const AllProducts = () => {
 
                   <label
                     onClick={() => setDeleteId(product._id)}
-                    for="confirmDelete"
+                    htmlFor="confirmDelete"
                     className="btn btn-xs btn-error"
                   >
                     delete

@@ -22,13 +22,13 @@ const Register = () => {
   const [createUserWithEmailAndPassword, userInput, loadingInput, errorInput] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
   const [user] = useAuthState(auth);
-
   const onSubmit = async (data) => {
-    console.log(data);
+    // console.log(data);
     setName(data.name);
     await createUserWithEmailAndPassword(data.email, data.password);
+    userInput.displayName = data.name;
   };
-  console.log(user);
+  // console.log(user);
 
   useEffect(() => {
     if (user) {

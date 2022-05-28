@@ -23,7 +23,7 @@ const ManageOrder = () => {
   if (isError) {
     toast.error('Something went wrong');
   }
-  console.log(usersOrder);
+  // console.log(usersOrder);
   return (
     <>
       <h1 className="text-2xl md:text-4xl text-purple-600 font-bold ml-2 md:ml-5">
