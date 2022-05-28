@@ -15,6 +15,7 @@ import MyProfile from './Pages/Dashboard/MyProfile';
 import Payment from './Pages/Dashboard/Payment';
 import UpdateProfile from './Pages/Dashboard/UpdateProfile';
 import Home from './Pages/Home/Home';
+import MyPortfolio from './Pages/MyPortfolio/MyPortfolio';
 import Purchase from './Pages/Purchase/Purchase';
 import Error404 from './Shared/Error404';
 import Footer from './Shared/Footer';
@@ -30,6 +31,7 @@ function App() {
           <Route path="/blog" element={<Blog />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/myPortfolio" element={<MyPortfolio />} />
           <Route
             path="/parts/:partsId"
             element={

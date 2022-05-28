@@ -11,6 +11,7 @@ const Footer = () => {
     { id: 2, path: '/products', name: 'Products' },
     { id: 3, path: '/review', name: 'Review' },
     { id: 4, path: '/dashboard', name: 'Dashboard' },
+    { id: 5, path: '/myPortfolio', name: 'Portfolio' },
   ];
   const services = [
     { id: 1, path: '/', name: 'Whole Sell' },
