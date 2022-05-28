@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import {
   useAuthState,
   useCreateUserWithEmailAndPassword,
+  useUpdateProfile,
 } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
@@ -21,20 +22,18 @@ const Register = () => {
   } = useForm();
   const [createUserWithEmailAndPassword, userInput, loadingInput, errorInput] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+  const [updateProfile, updating, updateError] = useUpdateProfile(auth);
   const [user] = useAuthState(auth);
   const onSubmit = async (data) => {
     // console.log(data);
     setName(data.name);
     await createUserWithEmailAndPassword(data.email, data.password);
-    userInput.displayName = data.name;
+    await updateProfile({ displayName: data.name });
   };
-  // console.log(user);
 
   useEffect(() => {
     if (user) {
-      user.displayName = name;
-      // console.log(user.displayName, name);
-      toast.success(`Welcome ${user.displayName}`);
+      toast.success(`Welcome`);
       navigate(from, { replace: true });
     }
   }, [user]);
