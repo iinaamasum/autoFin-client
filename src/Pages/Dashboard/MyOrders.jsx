@@ -52,7 +52,7 @@ const MyOrders = () => {
               <th>Name</th>
               <th>Price</th>
               <th>Order Quantity</th>
-              <th>Status</th>
+              <th className="text-center">Status</th>
             </tr>
           </thead>
           <tbody>
@@ -70,9 +70,27 @@ const MyOrders = () => {
                 <td>${order.price}</td>
                 <td>{order.item_needed}</td>
                 <td>
-                  <div className="">
-                    <div className="btn btn-sm">Pay</div>
-                  </div>
+                  {!order?.paid && (
+                    <div className="text-center">
+                      <button
+                        onClick={() =>
+                          navigate(`/dashboard/payment/${order._id}`)
+                        }
+                        className="btn btn-sm"
+                      >
+                        Pay
+                      </button>
+                    </div>
+                  )}
+                  {order?.paid && (
+                    <div className="text-center">
+                      <div className="btn btn-sm btn-success mb-1">Paid</div>
+                      <br />
+                      <div className="btn btn-sm btn-success">
+                        {order?.transactionId}
+                      </div>
+                    </div>
+                  )}
                 </td>
               </tr>
             ))}

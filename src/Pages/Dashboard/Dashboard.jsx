@@ -53,9 +53,13 @@ const Dashboard = () => {
             {/* <!-- Sidebar content here --> */}
 
             <li>
-              <NavLink onClick={() => setActiveLink(false)} to="/dashboard">
+              <Link
+                onClick={() => setActiveLink(true)}
+                className={`${activeLink ? 'active' : ''}`}
+                to="/dashboard"
+              >
                 My Profile
-              </NavLink>
+              </Link>
             </li>
             <li>
               <NavLink
@@ -66,16 +70,15 @@ const Dashboard = () => {
               </NavLink>
             </li>
 
-            {adminEmail === '' && (
+            {!adminEmail && (
               <>
                 <li>
-                  <Link
-                    onClick={() => setActiveLink(true)}
-                    className={`${activeLink ? 'active' : ''}`}
+                  <NavLink
+                    onClick={() => setActiveLink(false)}
                     to="/dashboard/myOrders"
                   >
                     My Orders
-                  </Link>
+                  </NavLink>
                 </li>
                 <li>
                   <NavLink

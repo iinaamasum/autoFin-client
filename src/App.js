@@ -12,6 +12,7 @@ import Dashboard from './Pages/Dashboard/Dashboard';
 import ManageOrder from './Pages/Dashboard/ManageOrder';
 import MyOrders from './Pages/Dashboard/MyOrders';
 import MyProfile from './Pages/Dashboard/MyProfile';
+import Payment from './Pages/Dashboard/Payment';
 import UpdateProfile from './Pages/Dashboard/UpdateProfile';
 import Home from './Pages/Home/Home';
 import Purchase from './Pages/Purchase/Purchase';
@@ -47,6 +48,7 @@ function App() {
             <Route index element={<MyProfile />} />
             <Route path="addReview" element={<AddReview />} />
             <Route path="myOrders" element={<MyOrders />} />
+            <Route path="payment/:orderId" element={<Payment />} />
             <Route path="updateProfile" element={<UpdateProfile />} />
             <Route path="allProducts" element={<AllProducts />} />
             <Route path="allUser" element={<AllUser />} />
