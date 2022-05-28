@@ -13,7 +13,10 @@ const UpdateProductModal = ({ updateProduct, refetch }) => {
   const { name, price, quantity, min_order } = updateProduct;
   const onSubmit = async (data) => {
     axios
-      .put(`http://localhost:5000/product/${updateProduct._id}`, data)
+      .put(
+        `https://blooming-fortress-97967.herokuapp.com/product/${updateProduct._id}`,
+        data
+      )
       .then((res) => {
         toast.success('Product updated successfully');
         refetch();

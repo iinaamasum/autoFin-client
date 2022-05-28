@@ -19,11 +19,14 @@ const MyOrders = () => {
     'myOrder',
     async () =>
       await axios
-        .get(`http://localhost:5000/myOrders?email=${user.email}`, {
-          headers: {
-            author: `Bearer ${localStorage.getItem('token')}`,
-          },
-        })
+        .get(
+          `https://blooming-fortress-97967.herokuapp.com/myOrders?email=${user.email}`,
+          {
+            headers: {
+              author: `Bearer ${localStorage.getItem('token')}`,
+            },
+          }
+        )
         .then((res) => res.data)
   );
   if (isLoading) return <LoadingComponent />;

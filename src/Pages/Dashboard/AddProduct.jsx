@@ -32,7 +32,7 @@ const AddProduct = () => {
           const img = result.data.url;
 
           axios
-            .post('http://localhost:5000/tools', {
+            .post('https://blooming-fortress-97967.herokuapp.com/tools', {
               ...data,
               img: img,
             })

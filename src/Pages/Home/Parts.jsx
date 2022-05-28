@@ -9,7 +9,9 @@ const Parts = () => {
     isLoading,
     isError,
   } = useQuery('parts', async () =>
-    axios.get('http://localhost:5000/products').then((res) => res.data)
+    axios
+      .get('https://blooming-fortress-97967.herokuapp.com/products')
+      .then((res) => res.data)
   );
 
   if (isLoading) {

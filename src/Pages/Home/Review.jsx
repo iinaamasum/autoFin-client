@@ -10,7 +10,9 @@ const Review = () => {
   const { data: reviews, isLoading } = useQuery(
     'reviews',
     async () =>
-      await axios.get('http://localhost:5000/review').then((res) => res.data)
+      await axios
+        .get('https://blooming-fortress-97967.herokuapp.com/review')
+        .then((res) => res.data)
   );
   if (isLoading) return <LoadingComponent />;
   const reviewsList = [];

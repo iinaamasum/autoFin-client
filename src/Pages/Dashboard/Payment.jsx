@@ -24,7 +24,9 @@ const Payment = () => {
     'payment',
     async () =>
       await axios
-        .get(`http://localhost:5000/usersOrder/${orderId}`)
+        .get(
+          `https://blooming-fortress-97967.herokuapp.com/usersOrder/${orderId}`
+        )
         .then((res) => res.data)
   );
   if (isLoading) {

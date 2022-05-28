@@ -6,11 +6,14 @@ const MakeAdminModal = ({ refetch, makeAdmin }) => {
   console.log(makeAdmin.email);
   const handleDelete = async () => {
     await axios
-      .put(`http://localhost:5000/userAdmin/${makeAdmin.email}`, {
-        name: makeAdmin.name,
-        email: makeAdmin.email,
-        role: 'Admin',
-      })
+      .put(
+        `https://blooming-fortress-97967.herokuapp.com/userAdmin/${makeAdmin.email}`,
+        {
+          name: makeAdmin.name,
+          email: makeAdmin.email,
+          role: 'Admin',
+        }
+      )
       .then((res) => {
         toast.success('Successfully made admin');
         refetch();

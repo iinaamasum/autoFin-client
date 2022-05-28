@@ -26,7 +26,7 @@ const Purchase = () => {
     ['product', partsId, handleSubmit],
     async () =>
       await axios
-        .get(`http://localhost:5000/product/${partsId}`)
+        .get(`https://blooming-fortress-97967.herokuapp.com/product/${partsId}`)
         .then((res) => res.data)
   );
   console.log(product);
@@ -43,7 +43,7 @@ const Purchase = () => {
       toast.error('Minimum order is ' + min_order);
     } else {
       axios
-        .post(`http://localhost:5000/product`, {
+        .post(`https://blooming-fortress-97967.herokuapp.com/product`, {
           ...data,
           img: img,
           name: name,
@@ -52,7 +52,7 @@ const Purchase = () => {
         })
         .then((res) => res.data);
       axios
-        .put(`http://localhost:5000/product/${_id}`, {
+        .put(`https://blooming-fortress-97967.herokuapp.com/product/${_id}`, {
           quantity: quantity - Number(data.item_needed),
         })
         .then((res) => {

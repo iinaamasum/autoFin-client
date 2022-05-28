@@ -17,7 +17,9 @@ const AllProducts = () => {
   } = useQuery(
     'item',
     async () =>
-      await axios.get('http://localhost:5000/products').then((res) => res.data)
+      await axios
+        .get('https://blooming-fortress-97967.herokuapp.com/products')
+        .then((res) => res.data)
   );
 
   if (isLoading) {

@@ -19,7 +19,7 @@ const AddReview = () => {
       toast.error('Rating must be between 1 and 5');
     } else {
       axios
-        .post(`http://localhost:5000/review`, {
+        .post(`https://blooming-fortress-97967.herokuapp.com/review`, {
           ...data,
         })
         .then((res) => res.data);

@@ -13,7 +13,7 @@ const MyProfile = () => {
     ['user'],
     async () =>
       await axios
-        .get(`http://localhost:5000/user/${user.email}`)
+        .get(`https://blooming-fortress-97967.herokuapp.com/user/${user.email}`)
         .then((res) => res.data)
   );
 

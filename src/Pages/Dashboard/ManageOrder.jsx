@@ -14,7 +14,7 @@ const ManageOrder = () => {
     'usersOrder',
     async () =>
       await axios
-        .get(`http://localhost:5000/usersOrder`)
+        .get(`https://blooming-fortress-97967.herokuapp.com/usersOrder`)
         .then((res) => res.data)
   );
   if (isLoading) {

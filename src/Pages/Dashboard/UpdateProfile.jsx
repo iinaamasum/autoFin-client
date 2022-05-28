@@ -14,10 +14,13 @@ const UpdateProfile = () => {
     console.log(user.email);
     try {
       axios
-        .put(`http://localhost:5000/user/${user.email}`, {
-          ...data,
-          email: user.email,
-        })
+        .put(
+          `https://blooming-fortress-97967.herokuapp.com/user/${user.email}`,
+          {
+            ...data,
+            email: user.email,
+          }
+        )
         .then((res) => res.data);
       reset();
       toast.success('Profile updated successfully');

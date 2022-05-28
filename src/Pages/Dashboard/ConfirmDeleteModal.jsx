@@ -5,7 +5,9 @@ import toast from 'react-hot-toast';
 const ConfirmDeleteModal = ({ refetch, deleteId }) => {
   const handleDelete = async () => {
     await axios
-      .delete(`http://localhost:5000/product/${deleteId}`)
+      .delete(
+        `https://blooming-fortress-97967.herokuapp.com/product/${deleteId}`
+      )
       .then(() => {
         toast.success('Product deleted successfully');
         refetch();

@@ -29,7 +29,7 @@ const Login = () => {
     try {
       await signInWithEmailAndPassword(data.email, data.password);
       const { data: dataToken } = await axios.post(
-        'http://localhost:5000/login',
+        'https://blooming-fortress-97967.herokuapp.com/login',
         {
           email: data.email,
         }
@@ -43,9 +43,12 @@ const Login = () => {
   useEffect(() => {
     if (user) {
       const tokenSet = async () => {
-        const { data } = await axios.post('http://localhost:5000/login', {
-          email: user.email,
-        });
+        const { data } = await axios.post(
+          'https://blooming-fortress-97967.herokuapp.com/login',
+          {
+            email: user.email,
+          }
+        );
         localStorage.setItem('token', data.token);
       };
       tokenSet();

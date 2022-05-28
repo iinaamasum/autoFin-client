@@ -16,7 +16,7 @@ const CheckoutForm = ({ product }) => {
 
   useEffect(() => {
     axios
-      .post('http://localhost:5000/payment', {
+      .post('https://blooming-fortress-97967.herokuapp.com/payment', {
         price,
       })
       .then((res) => {
@@ -67,11 +67,14 @@ const CheckoutForm = ({ product }) => {
       setSuccess('Payment Successful');
 
       axios
-        .put(`http://localhost:5000/usersOrder/${_id}`, {
-          paidProductId: _id,
-          paid: true,
-          transactionId: paymentIntent.id,
-        })
+        .put(
+          `https://blooming-fortress-97967.herokuapp.com/usersOrder/${_id}`,
+          {
+            paidProductId: _id,
+            paid: true,
+            transactionId: paymentIntent.id,
+          }
+        )
         .then((res) => {
           setProcessing(false);
           toast.success('Payment Successful');
