@@ -65,7 +65,7 @@ const UpdateProfile = () => {
             </label>
             <input
               type="number"
-              className="input px-5 py-3 rounded-lg w-full text-green-600 font-semibold bg-[#dddeee]"
+              className="input px-5 py-3 rounded-lg w-full text-green-600 font-semibold bg-[#dddeee64]"
               placeholder="Your Phone Number"
               {...register('phone')}
               required
@@ -77,7 +77,7 @@ const UpdateProfile = () => {
             </label>
             <input
               type="text"
-              className="input px-5 py-3 rounded-lg w-full text-green-600 font-semibold bg-[#dddeee]"
+              className="input px-5 py-3 rounded-lg w-full text-green-600 font-semibold bg-[#dddeee64]"
               placeholder="Enter your LinkedIn Id"
               {...register('linkedin')}
               required
@@ -90,7 +90,7 @@ const UpdateProfile = () => {
           </label>
           <input
             type="text"
-            className="input px-5 py-3 rounded-lg w-full text-green-600 font-semibold bg-[#dddeee]"
+            className="input px-5 py-3 rounded-lg w-full text-green-600 font-semibold bg-[#dddeee64]"
             placeholder="Your Educational qualification"
             {...register('education')}
             required
@@ -108,7 +108,7 @@ const UpdateProfile = () => {
             required
             {...register('address')}
             style={{ border: '1px solid #0FCFEC' }}
-            className="bg-[#dddeee] rounded-lg p-3 focus:outline-offset-2 focus:outline-gray-300 resize-none focus:ring-inset input-bordered input-primary w-full text-green-500 font-semibold"
+            className="bg-[#dddeee64] rounded-lg p-3 focus:outline-offset-2 focus:outline-gray-300 resize-none focus:ring-inset input-bordered input-primary w-full text-green-500 font-semibold"
           ></textarea>
         </div>
         <input
