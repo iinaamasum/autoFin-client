@@ -28,7 +28,7 @@ const Social = () => {
   }, [errorFb, errorGit, errorGo]);
 
   return (
-    <div className="text-center">
+    <div className="text-center mt-3">
       <button
         onClick={() => signInWithGoogle()}
         className="mr-2 hover:text-slate-500"

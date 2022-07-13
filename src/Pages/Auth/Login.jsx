@@ -63,7 +63,18 @@ const Login = () => {
           <div className="md:flex md:flex-row-reverse">
             <div className="card w-full md:w-1/2 bg-base-100 shadow-lg mx-auto">
               <div className="card-body bg-[#dddeee]">
-                <h2 className="card-title mx-auto text-4xl md:my-5">LogIn</h2>
+                <h2 className="card-title mx-auto text-4xl ">LogIn</h2>
+                <div className="">
+                  <p className="text-center font-bold mt-1">
+                    Admin Credentials
+                  </p>
+                  <p className="font-semibold text-center">
+                    Email: admin@admin.com
+                  </p>
+                  <p className="font-semibold text-center">
+                    Password: 1111111@
+                  </p>
+                </div>
                 <form className="w-full" onSubmit={handleSubmit(onSubmit)}>
                   <div className="form-control w-full mb-5">
                     <label className="">
@@ -155,7 +166,7 @@ const Login = () => {
                     type="submit"
                   />
                 </form>
-                <div className="divider text-lg font-semibold">
+                <div className="divider text-lg font-semibold m-0">
                   Social LogIn
                 </div>
                 <Social />
