@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import {
   useAuthState,
@@ -25,14 +26,35 @@ const Register = () => {
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
   const [user] = useAuthState(auth);
   const onSubmit = async (data) => {
-    // console.log(data);
+    console.log(data);
     setName(data.name);
-    await createUserWithEmailAndPassword(data.email, data.password);
-    await updateProfile({ displayName: data.name });
+    try {
+      await createUserWithEmailAndPassword(data.email, data.password);
+      await updateProfile({ displayName: data.name });
+      const { data: dataToken } = await axios.post(
+        'https://blooming-fortress-97967.herokuapp.com/login',
+        {
+          email: data.email,
+        }
+      );
+      localStorage.setItem('token', dataToken.token);
+    } catch (err) {
+      toast.error(err?.message);
+    }
   };
 
   useEffect(() => {
     if (user) {
+      const tokenSet = async () => {
+        const { data } = await axios.post(
+          'https://blooming-fortress-97967.herokuapp.com/login',
+          {
+            email: user.email,
+          }
+        );
+        localStorage.setItem('token', data.token);
+      };
+      tokenSet();
       toast.success(`Welcome`);
       navigate(from, { replace: true });
     }

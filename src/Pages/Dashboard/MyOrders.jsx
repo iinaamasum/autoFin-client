@@ -46,7 +46,7 @@ const MyOrders = () => {
 
   return (
     <>
-      <h1 className="text-2xl md:text-4xl text-purple-600 font-bold ml-2 md:ml-5">
+      <h1 className="text-2xl md:text-4xl text-purple-600 font-bold ml-2 md:ml-5 my-3">
         My Orders
       </h1>
       <div className="overflow-x-auto mx-5">
