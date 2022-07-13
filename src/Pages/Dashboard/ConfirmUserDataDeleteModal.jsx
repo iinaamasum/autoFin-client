@@ -32,18 +32,18 @@ const ConfirmUserDataDeleteModal = ({ refetch, deleteId }) => {
 
           <div className="modal-action">
             <label
-              onClick={handleDelete}
+              onClick={handleDeleteCancel}
               htmlFor="confirmDelete"
               className="btn px-5"
             >
-              Yes
+              No
             </label>
             <label
-              onClick={handleDeleteCancel}
+              onClick={handleDelete}
               htmlFor="confirmDelete"
               className="btn btn-error px-5"
             >
-              No
+              Yes
             </label>
           </div>
         </div>
