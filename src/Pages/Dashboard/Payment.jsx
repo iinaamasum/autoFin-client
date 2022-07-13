@@ -43,7 +43,7 @@ const Payment = () => {
       </h1>
       <div className="card w-full sm:w-1/2 mx-auto bg-base-100 shadow-xl">
         <figure>
-          <img className="w-full" src={img} alt="Shoes" />
+          <img className="w-full" src={img} alt="" />
         </figure>
         <div className="mx-10 my-5">
           <h2 className="card-title text-3xl">Product Name: {name}</h2>

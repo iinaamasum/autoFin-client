@@ -4,13 +4,14 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import { useQuery } from 'react-query';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import auth from '../../firebase.init';
 import LoadingComponent from '../../Shared/LoadingComponent';
 
 const Purchase = () => {
   const { partsId } = useParams();
   const [user] = useAuthState(auth);
+  const navigate = useNavigate();
 
   const {
     register,
@@ -63,6 +64,7 @@ const Purchase = () => {
         });
 
       toast.success(`Thank you for your purchase. Please pay now.`);
+      navigate(`/dashboard`);
     }
   };
 
