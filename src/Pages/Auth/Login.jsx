@@ -62,14 +62,12 @@ const Login = () => {
         <div style={{ maxWidth: '1024px' }} className="container mx-auto px-4">
           <div className="md:flex md:flex-row-reverse">
             <div className="card w-full md:w-1/2 bg-base-100 shadow-lg mx-auto">
-              <div className="card-body">
+              <div className="card-body bg-[#dddeee]">
                 <h2 className="card-title mx-auto text-4xl md:my-5">LogIn</h2>
                 <form className="w-full" onSubmit={handleSubmit(onSubmit)}>
                   <div className="form-control w-full mb-5">
                     <label className="">
-                      <span className="text-secondary font-semibold text-lg">
-                        Email
-                      </span>
+                      <span className="font-bold text-lg ml-3">Email</span>
                     </label>
                     <input
                       type="text"
@@ -101,9 +99,7 @@ const Login = () => {
                   </div>
                   <div className="form-control w-full">
                     <label className="">
-                      <span className="text-secondary font-semibold text-lg">
-                        Password
-                      </span>
+                      <span className="font-bold text-lg ml-3">Password</span>
                     </label>
                     <input
                       type="password"
@@ -134,7 +130,7 @@ const Login = () => {
                       )}
                     </label>
                   </div>
-                  <p className="mt-10">
+                  <p className="ml-3 mt-1">
                     Don't have an account?{' '}
                     <Link
                       className="btn-link text-purple-500 font-semibold"
@@ -143,7 +139,7 @@ const Login = () => {
                       Register Now
                     </Link>
                   </p>
-                  <p>
+                  <p className="ml-3">
                     Forgot Password?{' '}
                     <Link
                       className="btn-link text-purple-500 font-semibold"
@@ -154,7 +150,7 @@ const Login = () => {
                   </p>
 
                   <input
-                    className="btn btn-accent my-3 w-full tracking-wider capitalize text-xl rounded-full"
+                    className="btn btn-dark my-3 w-full tracking-wider capitalize text-xl rounded-full"
                     value="LogIn"
                     type="submit"
                   />
