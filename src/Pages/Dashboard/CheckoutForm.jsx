@@ -101,7 +101,7 @@ const CheckoutForm = ({ product }) => {
           }}
         />
         <button
-          className="btn btn-success w-full mt-4"
+          className="btn text-xl w-full mt-4"
           type="submit"
           disabled={!stripe || !clientSecret || success}
         >

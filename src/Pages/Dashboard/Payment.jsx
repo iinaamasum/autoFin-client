@@ -37,25 +37,23 @@ const Payment = () => {
   }
   const { img, name, price, item_needed, email } = product;
   return (
-    <div className="container px-2 md:px-10 mx-auto">
-      <h1 className="text-3xl font-bold text-purple-700 text-center my-2">
-        Payment
-      </h1>
-      <div className="card w-full sm:w-1/2 mx-auto bg-base-100 shadow-xl">
+    <div className="container px-2 md:px-10 mt-5 mx-auto">
+      <div className="card card-compact w-full sm:w-1/2 mx-auto bg-base-100 shadow-xl">
         <figure>
           <img className="w-full" src={img} alt="" />
         </figure>
         <div className="mx-10 my-5">
-          <h2 className="card-title text-3xl">Product Name: {name}</h2>
-          <div className="text-lg font-semibold text-purple-500">
-            Email: {email}
-          </div>
-          <div className="card-actions">
-            <div className="bg-error py-2 px-4 rounded-lg text-xl font-bold text-white">
+          <h1 className="text-3xl font-bold text-center">Payment</h1>
+          <h2 className="card-title text-2xl font-bold text-purple-800">
+            {name}
+          </h2>
+          <div className="font-semibold mb-1">Email: {email}</div>
+          <div className="flex justify-between items-center">
+            <div className="rounded-lg text-xl font-bold">
               Price: ${price} per unit
             </div>
-            <div className="bg-success py-2 px-4 rounded-lg text-xl font-bold text-white">
-              Purchase: {item_needed} units
+            <div className="rounded-lg text-xl font-bold">
+              Purchasing: {item_needed} units
             </div>
           </div>
           <div className="mt-5">
