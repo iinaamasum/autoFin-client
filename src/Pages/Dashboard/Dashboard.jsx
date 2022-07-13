@@ -39,7 +39,7 @@ const Dashboard = () => {
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content">
           {/* <!-- Page content here --> */}
-          <div className="flex justify-between items-center px-4 mt-5">
+          <div className="flex justify-between items-center px-4 py-3 bg-[#dddeee] shadow">
             <label htmlFor="my-drawer-2" className="drawer-button lg:hidden">
               <MdDashboard size={40} />
             </label>
@@ -51,7 +51,7 @@ const Dashboard = () => {
         </div>
         <div className="drawer-side">
           <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-          <ul className="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content gap-y-4">
+          <ul className="menu p-4 overflow-y-auto w-80  bg-[#dddeee50] text-base-content gap-y-4">
             {/* <!-- Sidebar content here --> */}
 
             <li>
