@@ -43,14 +43,12 @@ const Register = () => {
       <section className="mb-10 mt-24 md:mt-32">
         <div style={{ maxWidth: '1024px' }} className="container mx-auto px-4">
           <div className="card w-full md:w-1/2 bg-base-100 shadow-lg mx-auto">
-            <div className="card-body">
+            <div className="card-body bg-[#dddeee]">
               <h2 className="card-title mx-auto text-4xl">Register</h2>
               <form className="w-full" onSubmit={handleSubmit(onSubmit)}>
                 <div className="form-control w-full mb-4">
                   <label className="">
-                    <span className="text-secondary font-semibold text-lg">
-                      Name
-                    </span>
+                    <span className="font-bold text-lg ml-3">Name</span>
                   </label>
                   <input
                     type="text"
@@ -74,9 +72,7 @@ const Register = () => {
 
                 <div className="form-control w-full mb-4">
                   <label className="">
-                    <span className="text-secondary font-semibold text-lg">
-                      Email
-                    </span>
+                    <span className="font-bold text-lg ml-3">Email</span>
                   </label>
                   <input
                     type="text"
@@ -107,11 +103,9 @@ const Register = () => {
                   </label>
                 </div>
 
-                <div className="form-control w-full mb-4">
+                <div className="form-control w-full mb-1">
                   <label className="">
-                    <span className="text-secondary font-semibold text-lg">
-                      Password
-                    </span>
+                    <span className="font-bold text-lg ml-3">Password</span>
                   </label>
                   <input
                     type="password"
@@ -143,7 +137,7 @@ const Register = () => {
                   </label>
                 </div>
 
-                <p className="mt-4">
+                <p className="mt-1 ml-3">
                   Already have an account?{' '}
                   <Link
                     className="btn-link text-purple-500 font-semibold"
