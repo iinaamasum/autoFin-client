@@ -6,23 +6,27 @@ const PartsCard = ({ item }) => {
   const navigate = useNavigate();
   return (
     <section>
-      <div className="text-center card shadow-xl bg-base-100">
+      <div className="card-compact card shadow-xl bg-base-100">
         <figure>
-          <img src={img} alt="Shoes" className="w-full h-60" />
+          <img src={img} alt="Machine" className="w-full h-60 object-contain" />
         </figure>
 
-        <div className="card-body">
+        <div className="card-body bg-[#dddeee]">
           <h2 className="text-3xl font-semibold text-purple-700">{name}</h2>
-          <div className="flex justify-center gap-x-5 items-center text-orange-600 font-semibold mt-2">
-            <p>Price: ${price} per unit</p>
-            <p>Quantity: {quantity}</p>
+          <div className="">
+            <p className="font-semibold text-orange-600 text-xl">
+              Price: ${price} per unit
+            </p>
+            <p className="font-semibold text-purple-600">
+              In Stock: {quantity}
+            </p>
+            <p className="font-semibold">Minimum Order: {min_order}</p>
           </div>
-          <p className="font-semibold mb-2">Minimum Order: {min_order}</p>
           <p>{des?.slice(0, 200)}</p>
           <div className="">
             <button
               onClick={() => navigate(`/parts/${_id}`)}
-              className="btn btn-outline w-full"
+              className="btn btn-dark w-full"
             >
               Buy Now
             </button>

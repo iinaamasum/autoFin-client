@@ -51,12 +51,15 @@ const Review = () => {
               <div className="flex justify-center items-center mt-5">
                 <div class="avatar">
                   <div class="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                    <img src="https://placeimg.com/192/192/people" alt="" />
+                    <img
+                      src="https://source.unsplash.com/random/?user"
+                      alt=""
+                    />
                   </div>
                 </div>
                 <div className="ml-5">
                   <h2 className="card-title">{user?.displayName}</h2>
-                  <p>Designation here</p>
+                  <p>Web Developer</p>
                 </div>
               </div>
             </div>
