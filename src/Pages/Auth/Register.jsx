@@ -148,7 +148,7 @@ const Register = () => {
                 </p>
 
                 <input
-                  className="btn btn-accent my-3 w-full tracking-wider capitalize text-xl rounded-full"
+                  className="btn btn-dark my-3 w-full tracking-wider capitalize text-xl rounded-full"
                   value="Register"
                   type="submit"
                 />
