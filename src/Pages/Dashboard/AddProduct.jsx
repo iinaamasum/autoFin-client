@@ -50,19 +50,19 @@ const AddProduct = () => {
   };
   return (
     <section>
-      <div className="container mx-auto px-1 md:px-10">
-        <h1 className="text-2xl md:text-3xl mt-5 font-semibold text-purple-600">
+      <div className="container max-w-[800px] mx-auto p-4 md:p-8 lg:p-10 my-5 bg-base-100 rounded-xl shadow-xl">
+        <h1 className="text-2xl md:text-3xl font-semibold text-purple-600">
           Add A Review
         </h1>
 
-        <form onSubmit={handleSubmit(onSubmit)} className="my-10">
+        <form onSubmit={handleSubmit(onSubmit)} className="mt-3">
           <div className="form-control w-full mb-5">
             <label className="">
               <span className=" font-semibold text-lg">Product Name</span>
             </label>
             <input
               type="text"
-              className="input px-5 py-3 rounded-lg w-full text-green-600 font-semibold"
+              className="input px-5 py-3 rounded-lg w-full text-green-600 font-semibold bg-[#dddeee64]"
               placeholder="Product Name"
               {...register('name')}
             />
@@ -75,7 +75,7 @@ const AddProduct = () => {
               </label>
               <input
                 type="number"
-                className="input px-5 py-3 rounded-lg w-full text-green-600 font-semibold"
+                className="input px-5 py-3 rounded-lg w-full text-green-600 font-semibold bg-[#dddeee64]"
                 placeholder="Price"
                 {...register('price')}
                 required
@@ -87,7 +87,7 @@ const AddProduct = () => {
               </label>
               <input
                 type="number"
-                className="input px-5 py-3 rounded-lg w-full text-green-600 font-semibold"
+                className="input px-5 py-3 rounded-lg w-full text-green-600 font-semibold bg-[#dddeee64]"
                 placeholder="Quantity"
                 {...register('quantity')}
                 required
@@ -102,7 +102,7 @@ const AddProduct = () => {
               </label>
               <input
                 type="number"
-                className="input px-5 py-3 rounded-lg w-full text-green-600 font-semibold"
+                className="input px-5 py-3 rounded-lg w-full text-green-600 font-semibold bg-[#dddeee64]"
                 placeholder="Minimum Order"
                 {...register('min_order')}
                 required
@@ -114,7 +114,7 @@ const AddProduct = () => {
               </label>
               <input
                 type="file"
-                className="input input-bordered w-full pt-1"
+                className="input input-bordered w-full pt-1 bg-[#dddeee64]"
                 {...register('img', {
                   required: {
                     value: true,
@@ -140,17 +140,17 @@ const AddProduct = () => {
             </label>
             <textarea
               cols="30"
-              rows="5"
+              rows="4"
               type="text"
               placeholder="Enter description"
               required
               {...register('des')}
               style={{ border: '1px solid #0FCFEC' }}
-              className="rounded-lg p-3 focus:outline-offset-2 resize-none focus:ring-inset input-bordered input-primary w-full text-green-500 font-semibold"
+              className="rounded-lg p-3 focus:outline-offset-2 focus:outline-gray-300 resize-none focus:ring-inset input-bordered input-primary w-full text-green-500 font-semibold bg-[#dddeee64]"
             ></textarea>
           </div>
           <input
-            className="w-full btn btn-outline text-xl font-bold"
+            className="w-full btn text-xl font-bold"
             type="submit"
             value="Submit"
           />
