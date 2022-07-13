@@ -30,7 +30,7 @@ const AddReview = () => {
 
   return (
     <section>
-      <div className="container mx-auto px-1 md:px-10">
+      <div className="container max-w-[800px] mx-auto p-4 md:p-8 lg:p-10 my-5 bg-base-100 rounded-xl shadow-xl">
         <h1 className="text-2xl md:text-3xl mt-5 font-semibold text-purple-600">
           Add A Review
         </h1>
@@ -43,7 +43,7 @@ const AddReview = () => {
               </label>
               <input
                 type="text"
-                className="bg-gray-300 px-5 py-3 rounded-lg w-full text-red-600 font-semibold"
+                className="bg-gray-300 px-5 py-3 rounded-lg w-full text-red-600 font-semibold bg-[#dddeee64]"
                 disabled
                 value={user.displayName}
               />
@@ -54,7 +54,7 @@ const AddReview = () => {
               </label>
               <input
                 type="text"
-                className="bg-gray-300 px-5 py-3 rounded-lg w-full text-red-600 font-semibold"
+                className="bg-gray-300 px-5 py-3 rounded-lg w-full text-red-600 font-semibold bg-[#dddeee64]"
                 disabled
                 value={user.email}
               />
@@ -67,7 +67,7 @@ const AddReview = () => {
               </label>
               <input
                 type="text"
-                className="input px-5 py-3 rounded-lg w-full text-green-600 font-semibold"
+                className="input px-5 py-3 rounded-lg w-full text-green-600 font-semibold bg-[#dddeee64]"
                 placeholder="Your Phone"
                 {...register('phone')}
                 required
@@ -79,7 +79,7 @@ const AddReview = () => {
               </label>
               <input
                 type="text"
-                className="input px-5 py-3 rounded-lg w-full text-green-600 font-semibold"
+                className="input px-5 py-3 rounded-lg w-full text-green-600 font-semibold bg-[#dddeee64]"
                 placeholder="Rating"
                 {...register('rating')}
                 required
@@ -98,11 +98,11 @@ const AddReview = () => {
               required
               {...register('review')}
               style={{ border: '1px solid #0FCFEC' }}
-              className="rounded-lg p-3 focus:outline-offset-2 resize-none focus:ring-inset input-bordered input-primary w-full text-green-500 font-semibold"
+              className="bg-[#dddeee64] rounded-lg p-3 focus:outline-offset-2 resize-none focus:ring-inset input-bordered input-primary w-full text-green-500 font-semibold"
             ></textarea>
           </div>
           <input
-            className="w-full btn btn-outline text-xl font-bold"
+            className="w-full btn text-xl font-bold"
             type="submit"
             value="Submit"
           />
