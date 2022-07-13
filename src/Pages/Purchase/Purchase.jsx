@@ -73,11 +73,11 @@ const Purchase = () => {
       <div className="max-w-[1000px] container px-4 md:px-5 mx-auto">
         <div className="hero min-h-screen mt-[8%]">
           <div className="">
-            <div className="md:flex my-10">
+            <div className="md:flex my-10 items-center">
               <img
                 alt="product"
                 src={img}
-                className="rounded-lg shadow-2xl mr-10"
+                className="rounded-lg shadow-2xl mr-10 h-56"
               />
               <div className="">
                 <h1 className="text-5xl font-bold">{name}</h1>
