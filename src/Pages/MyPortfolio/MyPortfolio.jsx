@@ -3,7 +3,7 @@ import { BsFacebook, BsLinkedin } from 'react-icons/bs';
 import { GrTwitter } from 'react-icons/gr';
 import { IoIosDocument } from 'react-icons/io';
 import Typewriter from 'typewriter-effect';
-import ownImg from '../../assets/images/me.jpg';
+import ownImg from '../../assets/images/purple-gradient-designify.png';
 
 const HeaderSection = () => {
   return (
@@ -98,7 +98,7 @@ const HeaderSection = () => {
               </a>
             </div>
           </div>
-          <div className="flex items-center md:text-lg justify-start my-3">
+          <div className="flex items-center md:text-lg justify-start mt-3">
             <h2 className="font-semibold text-red-500 mr-2">
               Problem Solving:
             </h2>
@@ -127,6 +127,19 @@ const HeaderSection = () => {
             >
               VJudge
             </a>
+          </div>
+          <div className="">
+            <p className="capitalize font-semibold text-red-500 text-lg">
+              Actual Portfolio:{' '}
+              <a
+                href="https://iinaamasum-3ec05.web.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-500 underline mr-2 hover:text-blue-800 font-normal ml-1"
+              >
+                Click Here
+              </a>
+            </p>
           </div>
         </div>
         <div className="">
