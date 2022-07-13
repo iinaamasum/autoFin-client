@@ -3,6 +3,7 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { AiFillStar } from 'react-icons/ai';
 import { useQuery } from 'react-query';
+import userImg from '../../assets/images/purple-gradient-designify.png';
 import auth from '../../firebase.init';
 import LoadingComponent from '../../Shared/LoadingComponent';
 
@@ -51,10 +52,7 @@ const Review = () => {
               <div className="flex justify-center items-center mt-5">
                 <div class="avatar">
                   <div class="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                    <img
-                      src="https://source.unsplash.com/random/?user"
-                      alt=""
-                    />
+                    <img src={userImg} alt="" />
                   </div>
                 </div>
                 <div className="ml-5">

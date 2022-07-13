@@ -1,7 +1,7 @@
 # autoFin - a car product manufacturer site
 
 Live Site [Click Here](https://autofin-32068.web.app/).\
-Back-end Link [Click Here](https://github.com/programming-hero-web-course1/manufacturer-website-server-side-iinaamasum)
+Back-end Link [Click Here](https://github.com/iinaamasum/autoFin-server)
 
 ## About the Project
 
@@ -14,4 +14,4 @@ autoFin is a product manufacturer site which help people to buy product from the
 3. This site is secured by Firebase. So, you should not concern about security.
 4. Provides a form to simply upload your products
 5. A beautiful fully functional dashboard for user and admin.
-6. You can place order and pay money via card.
+6. You can place order and pay money via card. Stripe payment integration.
