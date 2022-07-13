@@ -1,85 +1,144 @@
-import { React } from 'react';
-import { BsGithub, BsLinkedin } from 'react-icons/bs';
-import me from '../../assets/images/me.jpg';
+import { AiFillGithub } from 'react-icons/ai';
+import { BsFacebook, BsLinkedin } from 'react-icons/bs';
+import { GrTwitter } from 'react-icons/gr';
+import { IoIosDocument } from 'react-icons/io';
+import Typewriter from 'typewriter-effect';
+import ownImg from '../../assets/images/me.jpg';
 
-const MyPortfolio = () => {
+const HeaderSection = () => {
   return (
-    <section className="text-gray-600 body-font">
-      <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
-        <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+    <div className="lg:h-[95vh] flex justify-center items-center max-w-[1300px] mx-auto pb-10 mt-[6%]">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+        <div className="">
+          <h1 className="text-4xl md:text-4xl font-bold text-sky-600">
+            Hello,
+          </h1>
+          <h1 className="text-4xl md:text-6xl font-bold mb-3">
+            I am <span className="text-purple-600">Md. Masum Mia</span>
+          </h1>
+          <h1 className="text-3xl md:text-5xl font-bold text-red-500 mb-5">
+            <Typewriter
+              options={{
+                strings: [
+                  'Junior Web Developer.',
+                  'Front-End Developer.',
+                  'Back-End Developer.',
+                  'Competitive Programmer',
+                ],
+                autoStart: true,
+                pauseFor: 2000,
+                delay: 200,
+                deleteSpeed: 100,
+                loop: true,
+              }}
+            />
+          </h1>
+
+          <p className="text-gray-600 py-3">
+            Passionate front-end web developer with extensive JavaScript, HTML,
+            and CSS project experience. Proven understanding of responsive
+            design in cross-browser compatibility. Seeking a position as a
+            Front-End Developer to sharp my web development skill with team
+            work.
+          </p>
+
+          <div className="flex md:flex-none lg:flex items-center">
+            <a
+              target="_blank"
+              href="https://drive.google.com/file/d/1N-wdH0WSxzJ27JE8TzgLusAVQZdI3y7b/view?usp=sharing"
+              className="btn btn-dark capitalize text-xl font-bold px-10 mr-4 inline-flex items-center text-gray-100"
+              rel="noreferrer"
+            >
+              <IoIosDocument />
+              Resume
+            </a>
+            <div className="flex items-center">
+              <a
+                href="https://github.com/iinaamasum"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <AiFillGithub
+                  size={40}
+                  className="mr-3 cursor-pointer hover:text-slate-600"
+                />
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/iinaamasum"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <BsLinkedin
+                  size={40}
+                  className="mr-3 cursor-pointer hover:text-slate-600"
+                />
+              </a>
+              <a
+                href="https://www.facebook.com/iinaamasum"
+                target="_blank"
+                rel="noopener noreferrer"
+                className=""
+              >
+                <BsFacebook
+                  size={40}
+                  className="mr-3 cursor-pointer hover:text-slate-600"
+                />
+              </a>
+              <a
+                href="https://twitter.com/iinaamasum"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hidden sm:block md:hidden lg:block"
+              >
+                <GrTwitter
+                  size={40}
+                  className="mr-3 cursor-pointer hover:text-slate-600"
+                />
+              </a>
+            </div>
+          </div>
+          <div className="flex items-center md:text-lg justify-start my-3">
+            <h2 className="font-semibold text-red-500 mr-2">
+              Problem Solving:
+            </h2>
+            <a
+              href="https://leetcode.com/iinaamasum/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-500 underline mr-2 hover:text-blue-800"
+            >
+              LeetCode
+            </a>
+            <a
+              href="https://codeforces.com/profile/iinaamasum"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-500 underline mr-2 hover:text-blue-800"
+            >
+              Codeforces
+            </a>
+
+            <a
+              href="https://vjudge.net/user/iinaamasum"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-500 underline mr-2 hover:text-blue-800"
+            >
+              VJudge
+            </a>
+          </div>
+        </div>
+        <div className="">
           <img
-            className="object-cover object-center rounded"
-            alt="hero"
-            src={me}
+            alt=""
+            src={ownImg}
+            className="w-full max-h-[80vh] rounded-2xl"
           />
         </div>
-        <div className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
-          <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
-            Name: Md. Masum Mia <br /> Email: iinaamasum@gamil.com
-          </h1>
-          <div className="text-lg font-semibold mb-4">
-            Education: <br />{' '}
-            <div className="ml-10 text-md">
-              <p>
-                University: Rajshahi University of Engineering and Technology
-              </p>{' '}
-              <p>Department: Computer Science and Engineering</p>
-              <p>College: Notre Dame College</p>
-            </div>
-            <p>Address: ZR-3, Monnafer More, Rajshahi.</p>
-            <p>
-              Project-1:{' '}
-              <a
-                className="text-blue-600 underline"
-                href="https://warehouse-4de2f.web.app/"
-              >
-                Click Here
-              </a>
-            </p>
-            <p>
-              Project-2:{' '}
-              <a
-                className="text-blue-600 underline"
-                href="https://visa-manager.netlify.app/"
-              >
-                Click Here
-              </a>
-            </p>
-            <p>
-              Project-3:{' '}
-              <a
-                className="text-blue-600 underline"
-                href="https://product-checker.netlify.app/"
-              >
-                Click Here
-              </a>
-            </p>
-          </div>
-          <p className="mb-8 leading-relaxed">
-            - 👋 Hi, I’m Md. Masum Mia <br /> - 👀 I’m interested in Mechine
-            Learning, Data Mining and AI. Currently I am doing development work
-            based on Web. Also I have interest in problem solving in various
-            online judge. I want to be a Data Scientist or Data Analytics.
-            Please pray for my bright future. <br /> - 🌱 I’m currently studying
-            in department of CSE at Rajshahi University of Engineering and
-            Technology ... <br /> - 💞️ I’m looking for a job to sharp my
-            development skill. <br /> - 📫 You can email or send message in
-            LinkedIn <br /> Email: iinaamasum@gmail.com
-          </p>
-          <div className="flex justify-center">
-            <button className="tracking-wide uppercase text-center bg-slate-200 hover:bg-slate-400 text-black font-semibold text-xl px-3 py-2 rounded flex items-center justify-between mr-4">
-              <BsGithub />
-              <span className="pl-2">Github</span>
-            </button>
-            <button className="tracking-wide uppercase text-center bg-slate-100 hover:bg-slate-300 text-black font-semibold text-xl px-3 py-2 rounded flex items-center justify-between">
-              <BsLinkedin />
-              <span className="pl-2">LinkedIn</span>
-            </button>
-          </div>
-        </div>
       </div>
-    </section>
+    </div>
   );
 };
 
-export default MyPortfolio;
+export default HeaderSection;
