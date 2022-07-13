@@ -29,8 +29,8 @@ const UpdateProfile = () => {
     }
   };
   return (
-    <div className="container mx-auto px-4 md:px-10 lg:px-20 my-10">
-      <h1 className="text-3xl md:text-5xl font-bold text-purple-600 mb-4">
+    <div className="container max-w-[800px] mx-auto p-4 md:p-8 lg:p-10 my-5 bg-base-100 rounded-xl shadow-xl">
+      <h1 className="text-4xl font-bold text-purple-600 mb-2">
         Update Your Profile
       </h1>
       <form onSubmit={handleSubmit(onSubmit)} className="">
@@ -65,8 +65,8 @@ const UpdateProfile = () => {
             </label>
             <input
               type="number"
-              className="input px-5 py-3 rounded-lg w-full text-green-600 font-semibold"
-              placeholder="Your Phone"
+              className="input px-5 py-3 rounded-lg w-full text-green-600 font-semibold bg-[#dddeee]"
+              placeholder="Your Phone Number"
               {...register('phone')}
               required
             />
@@ -77,8 +77,8 @@ const UpdateProfile = () => {
             </label>
             <input
               type="text"
-              className="input px-5 py-3 rounded-lg w-full text-green-600 font-semibold"
-              placeholder="LinkedIn Id"
+              className="input px-5 py-3 rounded-lg w-full text-green-600 font-semibold bg-[#dddeee]"
+              placeholder="Enter your LinkedIn Id"
               {...register('linkedin')}
               required
             />
@@ -90,7 +90,7 @@ const UpdateProfile = () => {
           </label>
           <input
             type="text"
-            className="input px-5 py-3 rounded-lg w-full text-green-600 font-semibold"
+            className="input px-5 py-3 rounded-lg w-full text-green-600 font-semibold bg-[#dddeee]"
             placeholder="Your Educational qualification"
             {...register('education')}
             required
@@ -108,11 +108,11 @@ const UpdateProfile = () => {
             required
             {...register('address')}
             style={{ border: '1px solid #0FCFEC' }}
-            className="rounded-lg p-3 focus:outline-offset-2 resize-none focus:ring-inset input-bordered input-primary w-full text-green-500 font-semibold"
+            className="bg-[#dddeee] rounded-lg p-3 focus:outline-offset-2 focus:outline-gray-300 resize-none focus:ring-inset input-bordered input-primary w-full text-green-500 font-semibold"
           ></textarea>
         </div>
         <input
-          className="w-full btn btn-outline font-bold"
+          className="w-full btn font-bold"
           type="submit"
           value="Update Info"
         />
