@@ -153,7 +153,9 @@ const Register = () => {
                   type="submit"
                 />
               </form>
-              <div className="divider text-lg font-semibold">Social LogIn</div>
+              <div className="divider text-lg font-semibold m-0">
+                Social LogIn
+              </div>
               <Social />
             </div>
           </div>
