@@ -93,7 +93,14 @@ const Navbar = ({ children }) => {
           {children}
         </div>
         <div className="drawer-side">
-          <label htmlFor="drawer-open-close" className="drawer-overlay"></label>
+          <label
+            htmlFor="drawer-open-close"
+            className="drawer-overlay pl-2 pt-2"
+          >
+            <div className="w-12 h-12 inline-flex items-center justify-center text-2xl bg-red-600 font-bold p-3 rounded-full">
+              X
+            </div>
+          </label>
           <ul className="menu p-4 overflow-y-auto w-80 bg-base-100">
             {navLinks.map((link) => (
               <li htmlFor="drawer-open-close" key={link.id}>
