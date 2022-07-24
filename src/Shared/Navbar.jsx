@@ -2,6 +2,7 @@ import { signOut } from 'firebase/auth';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import toast from 'react-hot-toast';
+import { ImCross } from 'react-icons/im';
 import { MdOutlineMenuOpen } from 'react-icons/md';
 import { Link, NavLink } from 'react-router-dom';
 import auth from '../firebase.init';
@@ -97,8 +98,8 @@ const Navbar = ({ children }) => {
             htmlFor="drawer-open-close"
             className="drawer-overlay pl-2 pt-2"
           >
-            <div className="w-12 h-12 inline-flex items-center justify-center text-2xl bg-red-600 font-bold p-3 rounded-full">
-              X
+            <div className="w-12 h-12 inline-flex items-center justify-center text-2xl bg-red-600 font-semibold p-3 rounded-full">
+              <ImCross color="white" />
             </div>
           </label>
           <ul className="menu p-4 overflow-y-auto w-80 bg-base-100">
@@ -115,18 +116,18 @@ const Navbar = ({ children }) => {
                   toast.success(`Good Bye ${user.displayName}`);
                   signOut(auth);
                 }}
-                className="btn btn-outline text-lg rounded-full capitalize mr-2"
+                className="btn text-lg rounded-full capitalize mt-2"
                 to="/login"
               >
                 Sign Out
               </button>
             ) : (
               <>
-                <Link className="btn btn-accent mr-2" to="/login">
+                <Link className="btn mt-2" to="/login">
                   LogIn
                 </Link>
                 <Link
-                  className="btn bg-white hover:bg-gray-100 outline-none border-0 text-accent mr-2"
+                  className="btn btn-outline btn-success mt-1"
                   to="/register"
                 >
                   Register

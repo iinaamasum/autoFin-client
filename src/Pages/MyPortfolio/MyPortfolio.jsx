@@ -7,7 +7,7 @@ import ownImg from '../../assets/images/purple-gradient-designify.png';
 
 const HeaderSection = () => {
   return (
-    <div className="lg:h-[95vh] flex justify-center items-center max-w-[1300px] mx-auto pb-10 mt-[6%]">
+    <div className="lg:h-[95vh] container px-3 md:px-6 lg:px-8 flex justify-center items-center max-w-[1300px] mx-auto pb-10 mt-[20%] md:mt-[8%]">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         <div className="">
           <h1 className="text-4xl md:text-4xl font-bold text-sky-600">
