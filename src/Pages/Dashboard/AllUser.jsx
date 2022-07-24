@@ -51,7 +51,7 @@ const AllUser = () => {
                 <td>
                   {user?.role ? (
                     <button disabled className="btn btn-xs">
-                      Make Admin
+                      Already Admin
                     </button>
                   ) : (
                     <label
