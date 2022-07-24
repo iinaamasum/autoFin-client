@@ -12,9 +12,8 @@ const Navbar = ({ children }) => {
 
   const navLinks = [
     { id: 1, path: '/', name: 'Home' },
-    { id: 2, path: '/blog', name: 'Blog' },
-    { id: 3, path: '/dashboard', name: 'Dashboard' },
-    { id: 4, path: '/myPortfolio', name: 'Portfolio' },
+    { id: 2, path: '/dashboard', name: 'Dashboard' },
+    { id: 3, path: '/myPortfolio', name: 'Portfolio' },
   ];
 
   return (
@@ -65,23 +64,17 @@ const Navbar = ({ children }) => {
                       </p>
                       <button
                         onClick={() => signOut(auth)}
-                        className="btn btn-accent my-2"
+                        className="btn my-2"
                       >
                         Sign Out
                       </button>
                     </div>
                   ) : (
                     <>
-                      <Link
-                        className="btn btn-accent text-white my-2 mr-2"
-                        to="/login"
-                      >
+                      <Link className="btn text-white my-2 mr-2" to="/login">
                         LogIn
                       </Link>
-                      <Link
-                        className="btn bg-white hover:bg-gray-100 outline-none border-0 text-accent"
-                        to="/register"
-                      >
+                      <Link className="btn btn-success" to="/register">
                         Register
                       </Link>
                     </>

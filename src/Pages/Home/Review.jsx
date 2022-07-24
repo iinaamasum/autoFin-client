@@ -56,7 +56,9 @@ const Review = () => {
                   </div>
                 </div>
                 <div className="ml-5">
-                  <h2 className="card-title">{user?.displayName}</h2>
+                  <h2 className="card-title">
+                    {user?.displayName || 'Md. Masum'}
+                  </h2>
                   <p>Web Developer</p>
                 </div>
               </div>
